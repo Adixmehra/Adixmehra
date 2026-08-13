@@ -1,673 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Adix Mehra — Creative Designer and Web Creator">
-<title>Adix Mehra | Portfolio</title>
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: Inter, sans-serif;
-  background: #07070a;
-  color: #f5f5f5;
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  width: 500px;
-  height: 500px;
-  background: #6c4cff;
-  filter: blur(180px);
-  opacity: .12;
-  top: -200px;
-  right: -200px;
-  pointer-events: none;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.container {
-  width: min(1120px, 90%);
-  margin: auto;
-}
-
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background: rgba(7,7,10,.75);
-  backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(255,255,255,.07);
-}
-
-nav {
-  height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  font-family: "Space Grotesk";
-  font-size: 22px;
-  font-weight: 800;
-}
-
-.logo span {
-  color: #8b72ff;
-}
-
-.nav-links {
-  display: flex;
-  gap: 28px;
-}
-
-.nav-links a {
-  font-size: 14px;
-  color: #aaa;
-  transition: .3s;
-}
-
-.nav-links a:hover {
-  color: white;
-}
-
-.menu {
-  display: none;
-  font-size: 27px;
-  cursor: pointer;
-}
-
-section {
-  padding: 110px 0;
-}
-
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  position: relative;
-  padding-top: 130px;
-}
-
-.hero-content {
-  max-width: 720px;
-}
-
-.badge {
-  display: inline-block;
-  padding: 8px 14px;
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 50px;
-  color: #aaa;
-  font-size: 13px;
-  margin-bottom: 25px;
-  background: rgba(255,255,255,.03);
-}
-
-h1 {
-  font-family: "Space Grotesk";
-  font-size: clamp(48px, 8vw, 88px);
-  line-height: 1;
-  letter-spacing: -4px;
-  margin-bottom: 25px;
-}
-
-h1 span,
-h2 span {
-  color: #917aff;
-}
-
-.hero p {
-  color: #aaa;
-  max-width: 620px;
-  font-size: 17px;
-}
-
-.buttons {
-  display: flex;
-  gap: 14px;
-  margin-top: 35px;
-  flex-wrap: wrap;
-}
-
-.btn {
-  padding: 14px 22px;
-  border-radius: 12px;
-  font-weight: 600;
-  border: 1px solid rgba(255,255,255,.12);
-  transition: .3s;
-}
-
-.primary {
-  background: #fff;
-  color: #080808;
-}
-
-.primary:hover {
-  transform: translateY(-3px);
-}
-
-.secondary {
-  background: rgba(255,255,255,.04);
-}
-
-.secondary:hover {
-  background: rgba(255,255,255,.09);
-}
-
-.section-title {
-  margin-bottom: 50px;
-}
-
-.small-title {
-  color: #8f7aff;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-}
-
-h2 {
-  font-family: "Space Grotesk";
-  font-size: clamp(36px, 6vw, 58px);
-  line-height: 1.05;
-  letter-spacing: -2px;
-}
-
-.about {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-}
-
-.about p {
-  color: #aaa;
-  font-size: 17px;
-}
-
-.card {
-  background: rgba(255,255,255,.035);
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: 20px;
-  padding: 28px;
-  transition: .35s;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(145,122,255,.4);
-}
-
-.skills {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 16px;
-}
-
-.skill-number {
-  color: #7562d8;
-  font-size: 13px;
-}
-
-.card h3 {
-  margin: 12px 0 8px;
-  font-family: "Space Grotesk";
-  font-size: 22px;
-}
-
-.card p {
-  color: #999;
-  font-size: 14px;
-}
-
-.projects {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 18px;
-}
-
-.project-image {
-  height: 210px;
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Space Grotesk";
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 22px;
-  background:
-    radial-gradient(circle at 30% 30%, #725cff, transparent 35%),
-    linear-gradient(135deg,#16151d,#08080b);
-}
-
-.project:nth-child(2) .project-image {
-  background:
-    radial-gradient(circle at 70% 30%, #ff4f9a, transparent 35%),
-    linear-gradient(135deg,#181018,#08080b);
-}
-
-.project:nth-child(3) .project-image {
-  background:
-    radial-gradient(circle at 50% 50%, #31c8ff, transparent 35%),
-    linear-gradient(135deg,#0c151b,#08080b);
-}
-
-.tag {
-  color: #8f7aff !important;
-  font-size: 12px !important;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.project h3 {
-  margin-top: 7px;
-}
-
-.services {
-  border-top: 1px solid rgba(255,255,255,.08);
-}
-
-.service {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 25px 5px;
-  border-bottom: 1px solid rgba(255,255,255,.08);
-}
-
-.service span {
-  color: #777;
-  font-size: 13px;
-}
-
-.service h3 {
-  margin: 0;
-}
-
-.contact-box {
-  text-align: center;
-  padding: 70px 25px;
-  background: linear-gradient(135deg,rgba(115,90,255,.13),rgba(255,255,255,.025));
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: 25px;
-}
-
-.contact-box p {
-  color: #aaa;
-  max-width: 550px;
-  margin: 20px auto 30px;
-}
-
-footer {
-  border-top: 1px solid rgba(255,255,255,.08);
-  padding: 30px 0;
-  color: #777;
-  font-size: 13px;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-}
-
-.reveal {
-  animation: reveal 1s ease both;
-}
-
-@keyframes reveal {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media(max-width:800px) {
-
-  .menu {
-    display: block;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 72px;
-    left: 5%;
-    right: 5%;
-    display: none;
-    flex-direction: column;
-    padding: 20px;
-    background: #111116;
-    border: 1px solid rgba(255,255,255,.1);
-    border-radius: 15px;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .about,
-  .skills,
-  .projects {
-    grid-template-columns: 1fr;
-  }
-
-  h1 {
-    letter-spacing: -2px;
-  }
-
-  section {
-    padding: 80px 0;
-  }
-
-  .hero {
-    min-height: 90vh;
-  }
-
-  .project-image {
-    height: 190px;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Adix Mehra — Creative Designer and Web Creator">
+  <meta name="theme-color" content="#08080b">
+  <title>Adix Mehra | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-<header>
-<nav class="container">
-  <a href="#home" class="logo"><span>A</span>DIX MEHRA</a>
-
-  <div class="menu" onclick="toggleMenu()">☰</div>
-
-  <div class="nav-links" id="navLinks">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+<header class="header">
+  <nav class="nav container">
+    <a class="logo" href="#home"><span>A</span>DIX MEHRA</a>
+    <button class="menu" aria-label="Open menu" aria-expanded="false">☰</button>
+    <div class="nav-links">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a>
+      <a href="#projects">Projects</a><a href="#services">Services</a><a href="#contact">Contact</a>
+    </div>
+  </nav>
 </header>
 
 <main>
-
 <section class="hero container" id="home">
-<div class="hero-content reveal">
-
-<div class="badge">✦ Creative Portfolio · 2026</div>
-
-<h1>
-Designing ideas into
-<span>digital experiences.</span>
-</h1>
-
-<p>
-Hi, I'm <strong>Adix Mehra</strong>. I create modern websites,
-visual identities and social media designs that are clean,
-memorable and built to stand out.
-</p>
-
-<div class="buttons">
-<a href="#projects" class="btn primary">View My Work ↗</a>
-<a href="#contact" class="btn secondary">Let's Talk</a>
-</div>
-
-</div>
+  <div class="hero-copy reveal">
+    <div class="badge">✦ Creative Portfolio · 2026</div>
+    <h1>Designing ideas into <span>digital experiences.</span></h1>
+    <p>Hi, I'm <strong>Adix Mehra</strong>. I create modern websites, visual identities and social media designs that are clean, memorable and built to stand out.</p>
+    <div class="buttons">
+      <a class="btn primary" href="#projects">View My Work ↗</a>
+      <a class="btn secondary" href="#contact">Let's Talk</a>
+    </div>
+  </div>
+  <div class="hero-visual reveal">
+    <div class="glow"></div>
+    <div class="avatar-card glass">
+      <img class="avatar photo" src="assets/adix-profile.jpg" alt="Adix Mehra">
+      <div><strong>Adix Mehra</strong><small>Designer · Creator</small></div>
+      <i></i>
+    </div>
+    <div class="floating-card glass">&lt;WEB/&gt;<small>Creative Development</small></div>
+  </div>
 </section>
 
-
-<section id="about">
-<div class="container">
-
-<div class="section-title">
-<div class="small-title">01 / About</div>
-<h2>A little bit <span>about me.</span></h2>
-</div>
-
-<div class="about">
-
-<div>
-<p>
-I'm a creative learner focused on design, websites and digital
-content. I enjoy turning simple ideas into polished visual
-experiences.
-</p>
-
-<br>
-
-<p>
-This portfolio is a growing collection of selected work,
-creative experiments and future projects.
-</p>
-</div>
-
-<div class="card">
-<h3>Creative Mindset</h3>
-<p>
-Always learning, experimenting and improving — from graphic
-design and branding to modern web experiences.
-</p>
-</div>
-
-</div>
-</div>
+<section class="section container" id="about">
+  <div class="section-title"><small>01 / ABOUT</small><h2>A little bit <span>about me.</span></h2></div>
+  <div class="about-grid">
+    <div class="about-copy reveal">
+      <p>I'm a creative learner focused on <strong>design, websites and digital content.</strong> I enjoy turning simple ideas into polished visual experiences.</p>
+      <p>This portfolio is a growing collection of selected work, creative experiments and future projects.</p>
+    </div>
+    <div class="stats">
+      <div class="glass stat"><strong>03+</strong><small>Featured Projects</small></div>
+      <div class="glass stat"><strong>06+</strong><small>Creative Skills</small></div>
+      <div class="glass stat"><strong>100%</strong><small>Curiosity</small></div>
+    </div>
+  </div>
 </section>
 
-
-<section id="skills">
-<div class="container">
-
-<div class="section-title">
-<div class="small-title">02 / Skills</div>
-<h2>Things I <span>create with.</span></h2>
-</div>
-
-<div class="skills">
-
-<div class="card">
-<span class="skill-number">01</span>
-<h3>Graphic Design</h3>
-<p>Creative layouts, posters and visual assets.</p>
-</div>
-
-<div class="card">
-<span class="skill-number">02</span>
-<h3>Web Design</h3>
-<p>Modern responsive website interfaces.</p>
-</div>
-
-<div class="card">
-<span class="skill-number">03</span>
-<h3>HTML & CSS</h3>
-<p>Clean structure and responsive layouts.</p>
-</div>
-
-<div class="card">
-<span class="skill-number">04</span>
-<h3>JavaScript</h3>
-<p>Interactive website features and effects.</p>
-</div>
-
-<div class="card">
-<span class="skill-number">05</span>
-<h3>Canva</h3>
-<p>Social media creatives and promotional designs.</p>
-</div>
-
-<div class="card">
-<span class="skill-number">06</span>
-<h3>Branding</h3>
-<p>Visual identity and brand consistency.</p>
-</div>
-
-</div>
-</div>
+<section class="section container" id="skills">
+  <div class="section-title"><small>02 / SKILLS</small><h2>Things I <span>create with.</span></h2></div>
+  <div class="grid skills">
+    <article class="glass card"><b>01</b><h3>Graphic Design</h3><p>Creative layouts, posters and visual assets.</p></article>
+    <article class="glass card"><b>02</b><h3>Web Design</h3><p>Modern responsive website interfaces.</p></article>
+    <article class="glass card"><b>03</b><h3>HTML & CSS</h3><p>Clean structure and responsive layouts.</p></article>
+    <article class="glass card"><b>04</b><h3>JavaScript</h3><p>Interactive website features and effects.</p></article>
+    <article class="glass card"><b>05</b><h3>Canva</h3><p>Social media creatives and promotional designs.</p></article>
+    <article class="glass card"><b>06</b><h3>Branding</h3><p>Visual identity and brand consistency.</p></article>
+  </div>
 </section>
 
-
-<section id="projects">
-<div class="container">
-
-<div class="section-title">
-<div class="small-title">03 / Selected Work</div>
-<h2>Projects with <span>purpose.</span></h2>
-</div>
-
-<div class="projects">
-
-<article class="card project">
-<div class="project-image">BP</div>
-<div class="tag">Branding & Social Media</div>
-<h3>Baglamukhi Prasad Point Kotla</h3>
-<p>Brand identity and promotional visual direction for a local business.</p>
-</article>
-
-<article class="card project">
-<div class="project-image">CREATIVE</div>
-<div class="tag">Marketing & Visuals</div>
-<h3>Promotional Creatives</h3>
-<p>Bold digital creatives designed to communicate products clearly.</p>
-</article>
-
-<article class="card project">
-<div class="project-image">&lt;WEB/&gt;</div>
-<div class="tag">Web Design</div>
-<h3>Professional Website</h3>
-<p>A modern responsive website concept focused on clarity and mobile-first design.</p>
-</article>
-
-</div>
-</div>
+<section class="section container" id="projects">
+  <div class="section-title"><small>03 / SELECTED WORK</small><h2>Projects with <span>purpose.</span></h2></div>
+  <div class="grid projects">
+    <article class="glass project reveal"><img class="project-photo" src="assets/adix-bike.jpg" alt="Adix Mehra on a motorcycle"><small>PERSONAL / CREATIVE</small><h3>Creative Visual</h3><p>A personal visual from my creative collection.</p></article>
+    <article class="glass project reveal"><img class="project-photo" src="assets/adix-road.jpg" alt="Adix Mehra outdoors"><small>PERSONAL / CREATIVE</small><h3>Personal Visuals</h3><p>Photography and visual moments from my personal collection.</p></article>
+    <article class="glass project reveal"><img class="project-photo" src="assets/adix-bike-2.jpg" alt="Adix Mehra with motorcycle"><small>WEB DESIGN</small><h3>Professional Website</h3><p>A modern responsive website concept focused on clarity and mobile-first design.</p></article>
+  </div>
 </section>
 
-
-<section id="services">
-<div class="container">
-
-<div class="section-title">
-<div class="small-title">04 / Services</div>
-<h2>What I can <span>create.</span></h2>
-</div>
-
-<div class="services">
-
-<div class="service">
-<span>01</span>
-<h3>Website Design</h3>
-<span>Modern responsive websites</span>
-</div>
-
-<div class="service">
-<span>02</span>
-<h3>Graphic Design</h3>
-<span>Creative visual assets</span>
-</div>
-
-<div class="service">
-<span>03</span>
-<h3>Social Media</h3>
-<span>Content & promotional designs</span>
-</div>
-
-<div class="service">
-<span>04</span>
-<h3>Branding</h3>
-<span>Visual identity</span>
-</div>
-
-</div>
-</div>
+<section class="section container" id="services">
+  <div class="section-title"><small>04 / SERVICES</small><h2>What I can <span>create.</span></h2></div>
+  <div class="services glass">
+    <div><span>01</span><strong>Website Design</strong><small>Modern responsive websites</small></div>
+    <div><span>02</span><strong>Graphic Design</strong><small>Creative visual assets</small></div>
+    <div><span>03</span><strong>Social Media</strong><small>Content & promotional designs</small></div>
+    <div><span>04</span><strong>Branding</strong><small>Visual identity</small></div>
+  </div>
 </section>
 
-
-<section id="contact">
-<div class="container">
-
-<div class="contact-box">
-
-<div class="small-title">05 / Contact</div>
-
-<h2>Have an idea?<br>
-<span>Let's make it real.</span>
-</h2>
-
-<p>
-For collaborations, creative projects or website work,
-connect with me through your preferred platform.
-</p>
-
-<div class="buttons" style="justify-content:center">
-
-<a class="btn primary"
-href="mailto:your-email@example.com">
-Email Me ↗
-</a>
-
-<a class="btn secondary"
-href="https://instagram.com/"
-target="_blank">
-Instagram ↗
-</a>
-
-<a class="btn secondary"
-href="https://wa.me/"
-target="_blank">
-WhatsApp ↗
-</a>
-
-</div>
-
-</div>
-</div>
+<section class="section container" id="contact">
+  <div class="contact glass reveal">
+    <small>05 / CONTACT</small>
+    <h2>Have an idea?<br><span>Let's make it real.</span></h2>
+    <p>For collaborations, creative projects or website work, connect with me through your preferred platform.</p>
+    <div class="buttons center">
+      <a class="btn primary" href="mailto:angaming472@gmail.com">Email Me ↗</a>
+      <a class="btn secondary" href="https://www.instagram.com/adixmehra/" target="_blank" rel="noreferrer">Instagram ↗</a>
+    </div>
+    <em>Instagram: @adixmehra · Email: angaming472@gmail.com</em>
+  </div>
 </section>
-
 </main>
 
-
-<footer>
-<div class="container footer-inner">
-<span>© 2026 Adix Mehra</span>
-<a href="#home">Back to top ↑</a>
-</div>
-</footer>
-
-
-<script>
-function toggleMenu() {
-  document.getElementById("navLinks").classList.toggle("active");
-}
-
-document.querySelectorAll(".nav-links a").forEach(link => {
-  link.addEventListener("click", () => {
-    document.getElementById("navLinks").classList.remove("active");
-  });
-});
-</script>
-
+<footer><div class="container"><span>© 2026 Adix Mehra</span><a href="#home">Back to top ↑</a></div></footer>
+<script src="script.js"></script>
 </body>
-  </html>
+</html>
