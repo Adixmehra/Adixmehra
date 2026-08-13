@@ -169,3 +169,68 @@ if('IntersectionObserver' in window){
 }else{
   animatedItems.forEach(el=>el.classList.add('is-visible'));
     }
+/* Mobile layout fix */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  max-width: 100%;
+}
+
+.container {
+  width: min(1120px, calc(100% - 28px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 800px) {
+  .container {
+    width: calc(100% - 28px);
+    margin-left: 14px;
+    margin-right: 14px;
+  }
+
+  .hero,
+  .section {
+    width: 100%;
+  }
+
+  .section-title,
+  .hero-copy {
+    width: 100%;
+  }
+
+  .section-title h2,
+  .hero h1 {
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  .projects,
+  .skills {
+    width: 100%;
+  }
+
+  .project,
+  .card {
+    width: 100%;
+  }
+
+  .project-photo {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .nav {
+    width: calc(100% - 28px);
+  }
+
+  .logo {
+    font-size: 20px;
+    white-space: nowrap;
+  }
+}
