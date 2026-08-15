@@ -1,230 +1,124 @@
-l/* ==================================================
+/* =================================
    ADIX MEHRA PORTFOLIO
-   Main JavaScript
-================================================== */
+   MAIN JAVASCRIPT
+================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+/* ================================
+   MOBILE MENU
+================================ */
 
-  /* ==================================================
-     LOADING SCREEN
-  ================================================== */
+const menu = document.querySelector(".menu");
+const links = document.querySelector(".nav-links");
 
-  const loader = document.getElementById("loader");
+if (menu && links) {
 
-  window.addEventListener("load", () => {
+  menu.addEventListener("click", () => {
 
-    setTimeout(() => {
+    const open = links.classList.toggle("active");
 
-      if (loader) {
-        loader.classList.add("hide");
-      }
+    menu.setAttribute("aria-expanded", open);
 
-    }, 700);
+    menu.setAttribute(
+      "aria-label",
+      open ? "Close menu" : "Open menu"
+    );
 
   });
 
 
-  /* ==================================================
-     MOBILE MENU
-  ================================================== */
+  /* Close menu when a link is clicked */
 
-  const menu = document.querySelector(".menu");
-  const links = document.querySelector(".nav-links");
+  document.querySelectorAll(".nav-links a").forEach((link) => {
 
-  if (menu && links) {
+    link.addEventListener("click", () => {
 
-    menu.addEventListener("click", () => {
+      links.classList.remove("active");
 
-      const isOpen =
-        links.classList.toggle("active");
-
-      menu.setAttribute(
-        "aria-expanded",
-        String(isOpen)
-      );
+      menu.setAttribute("aria-expanded", "false");
 
       menu.setAttribute(
         "aria-label",
-        isOpen
-          ? "Close menu"
-          : "Open menu"
+        "Open menu"
       );
-
-      menu.textContent =
-        isOpen ? "×" : "☰";
 
     });
 
+  });
 
-    /* Close menu after clicking link */
+}
 
-    document
-      .querySelectorAll(".nav-links a")
-      .forEach((link) => {
 
-        link.addEventListener("click", () => {
+/* ================================
+   SCROLL REVEAL
+================================= */
 
-          links.classList.remove("active");
+const revealElements = document.querySelectorAll(".reveal");
 
-          menu.setAttribute(
-            "aria-expanded",
-            "false"
-          );
+if (revealElements.length > 0) {
 
-          menu.setAttribute(
-            "aria-label",
-            "Open menu"
-          );
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
 
-          menu.textContent = "☰";
+      entries.forEach((entry) => {
 
-        });
+        if (entry.isIntersecting) {
+
+          entry.target.classList.add("visible");
+
+          revealObserver.unobserve(entry.target);
+
+        }
 
       });
 
-
-    /* Close menu when clicking outside */
-
-    document.addEventListener("click", (event) => {
-
-      const clickedInsideMenu =
-        menu.contains(event.target);
-
-      const clickedInsideLinks =
-        links.contains(event.target);
-
-      if (
-        !clickedInsideMenu &&
-        !clickedInsideLinks &&
-        links.classList.contains("active")
-      ) {
-
-        links.classList.remove("active");
-
-        menu.setAttribute(
-          "aria-expanded",
-          "false"
-        );
-
-        menu.setAttribute(
-          "aria-label",
-          "Open menu"
-        );
-
-        menu.textContent = "☰";
-
-      }
-
-    });
-
-  }
+    },
+    {
+      threshold: 0.15
+    }
+  );
 
 
-  /* ==================================================
-     REVEAL ON SCROLL
-  ================================================== */
+  revealElements.forEach((element) => {
 
-  const revealElements =
-    document.querySelectorAll(".reveal");
+    revealObserver.observe(element);
 
-  if ("IntersectionObserver" in window) {
+  });
 
-    const observer =
-      new IntersectionObserver(
-        (entries, observerInstance) => {
+}
 
-          entries.forEach((entry) => {
 
-            if (entry.isIntersecting) {
+/* ================================
+   CURRENT YEAR
+================================= */
 
-              entry.target.classList.add(
-                "visible"
-              );
+const yearElement = document.querySelector("footer span");
 
-              observerInstance.unobserve(
-                entry.target
-              );
+if (yearElement) {
 
-            }
+  yearElement.textContent =
+    `© ${new Date().getFullYear()} Adix Mehra`;
 
-          });
+}
 
-        },
-        {
-          threshold: 0.12
-        }
-      );
 
-    revealElements.forEach((element) => {
+/* ================================
+   ESC KEY
+   CLOSE MOBILE MENU
+================================= */
 
-      observer.observe(element);
+document.addEventListener("keydown", (event) => {
 
-    });
+  if (event.key === "Escape" && menu && links) {
 
-  } else {
+    links.classList.remove("active");
 
-    /* Fallback for old browsers */
+    menu.setAttribute("aria-expanded", "false");
 
-    revealElements.forEach((element) => {
-
-      element.classList.add("visible");
-
-    });
+    menu.setAttribute(
+      "aria-label",
+      "Open menu"
+    );
 
   }
-
-
-  /* ==================================================
-     CURRENT YEAR
-  ================================================== */
-
-  const yearElement =
-    document.querySelector("footer span");
-
-  if (yearElement) {
-
-    yearElement.textContent =
-      `© ${new Date().getFullYear()} Adix Mehra`;
-
-  }
-
-
-  /* ==================================================
-     SMOOTH INTERNAL LINKS
-  ================================================== */
-
-  document
-    .querySelectorAll('a[href^="#"]')
-    .forEach((link) => {
-
-      link.addEventListener("click", (event) => {
-
-        const targetId =
-          link.getAttribute("href");
-
-        if (
-          !targetId ||
-          targetId === "#"
-        ) {
-          return;
-        }
-
-        const target =
-          document.querySelector(targetId);
-
-        if (!target) {
-          return;
-        }
-
-        event.preventDefault();
-
-        target.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-
-      });
-
-    });
 
 });
