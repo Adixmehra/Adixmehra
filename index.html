@@ -2,75 +2,163 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <meta
     name="description"
-    content="Adix Mehra — Creative Developer creating clean websites and social media designs."
+    content="Adix Mehra — Creative Developer creating modern websites and social media designs."
   >
 
   <meta name="author" content="Adix Mehra">
-  <meta name="theme-color" content="#f7f7f4">
 
-  <meta property="og:title" content="Adix Mehra — Creative Developer">
   <meta
-    property="og:description"
-    content="Creative Developer focused on web design, development and social media design."
+    name="theme-color"
+    content="#f5f3ee"
   >
-  <meta property="og:type" content="website">
 
   <title>Adix Mehra — Creative Developer</title>
 
-  <!-- Fonts -->
+  <!-- ================= FONTS ================= -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="./style.css">
+  <!-- ================= CSS ================= -->
+
+  <link
+    rel="stylesheet"
+    href="./style.css"
+  >
 </head>
+
 
 <body>
 
-  <div class="page-noise"></div>
+
+  <!-- =================================================
+       PRELOADER
+  ================================================== -->
+
+  <div class="loader" id="loader">
+
+    <div class="loader-inner">
+
+      <div class="loader-name">
+        Adix Mehra
+      </div>
+
+      <div class="loader-line">
+        <span></span>
+      </div>
+
+      <div class="loader-percent">
+        <span id="loaderPercent">0</span>%
+      </div>
+
+    </div>
+
+  </div>
 
 
-  <!-- ================= HEADER ================= -->
 
-  <header class="header">
+  <!-- =================================================
+       CUSTOM CURSOR
+  ================================================== -->
+
+  <div class="cursor" id="cursor"></div>
+
+  <div class="cursor-ring" id="cursorRing"></div>
+
+
+
+  <!-- =================================================
+       NOISE
+  ================================================== -->
+
+  <div class="noise"></div>
+
+
+
+  <!-- =================================================
+       HEADER
+  ================================================== -->
+
+  <header class="header" id="header">
 
     <nav class="nav container">
 
-      <a href="#home" class="logo">
+      <a
+        href="#home"
+        class="logo magnetic"
+        data-cursor="link"
+      >
         Adix Mehra
       </a>
 
 
       <button
-        class="menu"
-        aria-label="Open navigation"
+        class="menu-button"
+        id="menuButton"
+        aria-label="Open menu"
         aria-expanded="false"
       >
+
         <span></span>
         <span></span>
+
       </button>
 
 
-      <div class="nav-links">
+      <div class="nav-links" id="navLinks">
 
-        <a href="#home">Home</a>
+        <a
+          href="#home"
+          class="nav-link"
+        >
+          Home
+        </a>
 
-        <a href="#about">About</a>
+        <a
+          href="#about"
+          class="nav-link"
+        >
+          About
+        </a>
 
-        <a href="#services">Services</a>
+        <a
+          href="#services"
+          class="nav-link"
+        >
+          Services
+        </a>
 
-        <a href="#work">Work</a>
+        <a
+          href="#work"
+          class="nav-link"
+        >
+          Work
+        </a>
 
-        <a href="#contact">Contact</a>
+        <a
+          href="#contact"
+          class="nav-link"
+        >
+          Contact
+        </a>
 
       </div>
 
@@ -80,202 +168,103 @@
 
 
 
-  <!-- ================= MAIN ================= -->
+  <!-- =================================================
+       MAIN
+  ================================================== -->
 
   <main>
 
 
-    <!-- ================= HERO ================= -->
+    <!-- =================================================
+         HERO
+    ================================================== -->
 
-    <section class="hero container" id="home">
+    <section
+      class="hero"
+      id="home"
+    >
 
+      <div class="hero-grid"></div>
 
-      <div class="hero-content reveal">
-
-
-        <div class="eyebrow">
-
-          <span class="dot"></span>
-
-          Available for creative projects
-
-        </div>
+      <div class="hero-orb orb-one"></div>
+      <div class="hero-orb orb-two"></div>
 
 
-        <h1>
-
-          Adix Mehra
-
-          <span>Creative Developer.</span>
-
-        </h1>
+      <div class="container hero-container">
 
 
-        <p class="hero-text">
-
-          I design and build clean digital experiences for people
-          and brands that want to stand out online.
-
-        </p>
+        <div class="hero-left">
 
 
-        <div class="hero-actions">
-
-
-          <a href="#work" class="button button-dark">
-
-            Explore my work
-
-            <span>↗</span>
-
-          </a>
-
-
-          <a href="#contact" class="text-link">
-
-            Let's talk
-
-            <span>→</span>
-
-          </a>
-
-
-        </div>
-
-      </div>
-
-
-
-      <div class="hero-image reveal">
-
-
-        <div class="image-frame">
-
-          <img
-            src="./assets/adix-profile.jpg"
-            alt="Adix Mehra"
+          <div
+            class="availability reveal-up"
+            data-delay="300"
           >
 
-        </div>
+            <span class="availability-dot"></span>
+
+            Available for creative projects
+
+          </div>
 
 
-        <div class="image-label">
+          <h1 class="hero-title">
 
-          <span>01</span>
+            <span class="hero-line">
+              <span>Adix</span>
+            </span>
 
-          Creative Developer
+            <span class="hero-line">
+              <span>Mehra.</span>
+            </span>
 
-        </div>
+            <span class="hero-line hero-accent">
+              <span>Creative Developer.</span>
+            </span>
 
-
-      </div>
-
-
-    </section>
-
-
-
-    <!-- ================= INTRO ================= -->
-
-    <section class="intro container reveal">
+          </h1>
 
 
-      <div class="section-number">
-
-        01
-
-      </div>
-
-
-      <div>
-
-        <p class="large-text">
-
-          Turning ideas into
-
-          <em>clean, useful and memorable</em>
-
-          digital experiences.
-
-        </p>
-
-      </div>
-
-
-    </section>
-
-
-
-    <!-- ================= ABOUT ================= -->
-
-    <section class="section container" id="about">
-
-
-      <div class="section-heading reveal">
-
-        <span>About me</span>
-
-        <h2>
-
-          A little about
-
-          <em>Adix.</em>
-
-        </h2>
-
-      </div>
-
-
-
-      <div class="about-grid">
-
-
-        <div class="about-image reveal">
-
-          <img
-            src="./assets/adix-road.jpg"
-            alt="Adix Mehra"
-            loading="lazy"
+          <p
+            class="hero-description reveal-up"
+            data-delay="900"
           >
 
-        </div>
-
-
-
-        <div class="about-content reveal">
-
-
-          <p class="about-lead">
-
-            I'm Adix Mehra, a creative developer interested
-            in the space where design and technology meet.
+            I design and build clean, modern digital experiences
+            where creativity meets technology.
 
           </p>
 
 
-          <p>
+          <div
+            class="hero-buttons reveal-up"
+            data-delay="1100"
+          >
 
-            I enjoy creating modern websites and digital visuals
-            with a strong focus on simplicity, clarity and visual detail.
+            <a
+              href="#work"
+              class="button button-dark magnetic"
+              data-cursor="button"
+            >
 
-          </p>
+              <span>Explore my work</span>
+
+              <span class="button-arrow">↗</span>
+
+            </a>
 
 
-          <p>
+            <a
+              href="#contact"
+              class="under-link"
+              data-cursor="link"
+            >
 
-            I'm continuously building, learning and experimenting —
-            with this portfolio growing alongside my work.
+              Let's talk
 
-          </p>
+              <span>→</span>
 
-
-          <div class="about-tags">
-
-            <span>Web Design</span>
-
-            <span>Development</span>
-
-            <span>Social Media Design</span>
+            </a>
 
           </div>
 
@@ -283,26 +272,270 @@
         </div>
 
 
+
+        <!-- HERO IMAGE -->
+
+        <div
+          class="hero-visual reveal-scale"
+          data-delay="600"
+        >
+
+          <div
+            class="hero-image-wrap"
+            id="heroImage"
+          >
+
+            <img
+              src="./assets/adix-profile.jpg"
+              alt="Adix Mehra"
+              class="hero-image"
+            >
+
+            <div class="hero-image-overlay"></div>
+
+          </div>
+
+
+          <div class="floating-card card-top">
+
+            <span>01</span>
+
+            <strong>Creative</strong>
+
+          </div>
+
+
+          <div class="floating-card card-bottom">
+
+            <span>Based on</span>
+
+            <strong>Ideas × Code</strong>
+
+          </div>
+
+
+          <div class="hero-image-caption">
+
+            <span>Scroll to explore</span>
+
+            <span class="scroll-line"></span>
+
+          </div>
+
+        </div>
+
+
       </div>
 
+
+      <div class="hero-bottom">
+
+        <div class="container hero-bottom-inner">
+
+          <span>WEB DESIGN</span>
+
+          <span>DEVELOPMENT</span>
+
+          <span>SOCIAL MEDIA</span>
+
+          <span>CREATIVE DIRECTION</span>
+
+        </div>
+
+      </div>
 
     </section>
 
 
 
-    <!-- ================= SERVICES ================= -->
+    <!-- =================================================
+         INTRO
+    ================================================== -->
 
-    <section class="section services-section" id="services">
-
+    <section class="intro section">
 
       <div class="container">
 
 
-        <div class="section-heading reveal">
+        <div class="section-label reveal-up">
 
-          <span>What I do</span>
+          <span>01</span>
 
-          <h2>
+          <span>THE APPROACH</span>
+
+        </div>
+
+
+        <div class="intro-text">
+
+          <p class="reveal-text">
+
+            I believe good digital experiences should feel
+
+            <em>simple, intentional</em>
+
+            and
+
+            <em>alive.</em>
+
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         ABOUT
+    ================================================== -->
+
+    <section
+      class="about section"
+      id="about"
+    >
+
+      <div class="container">
+
+
+        <div class="section-header">
+
+          <div class="section-label reveal-up">
+
+            <span>02</span>
+
+            <span>ABOUT ME</span>
+
+          </div>
+
+
+          <h2 class="section-title reveal-up">
+
+            A little about
+
+            <em>Adix.</em>
+
+          </h2>
+
+        </div>
+
+
+
+        <div class="about-grid">
+
+
+          <div class="about-photo reveal-left">
+
+            <div class="photo-frame">
+
+              <img
+                src="./assets/adix-road.jpg"
+                alt="Adix Mehra"
+                loading="lazy"
+              >
+
+              <div class="photo-number">
+                02 / 05
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="about-content reveal-right">
+
+
+            <p class="about-big">
+
+              I'm a creative developer who enjoys turning
+              ideas into digital experiences.
+
+            </p>
+
+
+            <p>
+
+              My interests sit between design and technology.
+              I like clean layouts, thoughtful interactions,
+              strong visuals and websites that feel good to use.
+
+            </p>
+
+
+            <p>
+
+              I'm constantly learning, experimenting and building.
+              This portfolio is a living collection of that journey.
+
+            </p>
+
+
+            <div class="about-tags">
+
+              <span>Web Design</span>
+
+              <span>Development</span>
+
+              <span>Social Media</span>
+
+              <span>Creative</span>
+
+            </div>
+
+
+            <a
+              href="#contact"
+              class="circle-link magnetic"
+              data-cursor="button"
+            >
+
+              <span>Let's work<br>together</span>
+
+              <span class="circle-arrow">↗</span>
+
+            </a>
+
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         SERVICES
+    ================================================== -->
+
+    <section
+      class="services section"
+      id="services"
+    >
+
+      <div class="container">
+
+
+        <div class="section-header services-header">
+
+          <div class="section-label light reveal-up">
+
+            <span>03</span>
+
+            <span>WHAT I DO</span>
+
+          </div>
+
+
+          <h2 class="section-title light reveal-up">
 
             Built with purpose,
 
@@ -319,43 +552,43 @@
 
           <!-- SERVICE 01 -->
 
-          <article class="service reveal">
+          <article
+            class="service-item reveal-up"
+            data-service="01"
+          >
 
-
-            <div class="service-number">
-
+            <div class="service-index">
               01
-
             </div>
 
 
-            <div class="service-main">
-
+            <div class="service-content">
 
               <h3>
-
-                Web Design & Development
-
+                Web Design
+                <span>& Development</span>
               </h3>
-
 
               <p>
 
-                Clean, responsive websites designed to look sharp,
-                communicate clearly and work smoothly across devices.
+                Modern, responsive websites designed around
+                clarity, usability and visual impact.
 
               </p>
 
+            </div>
+
+
+            <div class="service-icon">
+
+              <span>↗</span>
 
             </div>
 
 
-            <div class="service-arrow">
-
-              ↗
-
+            <div class="service-hover-number">
+              01
             </div>
-
 
           </article>
 
@@ -363,43 +596,43 @@
 
           <!-- SERVICE 02 -->
 
-          <article class="service reveal">
+          <article
+            class="service-item reveal-up"
+            data-service="02"
+          >
 
-
-            <div class="service-number">
-
+            <div class="service-index">
               02
-
             </div>
 
 
-            <div class="service-main">
-
+            <div class="service-content">
 
               <h3>
-
-                Social Media Design
-
+                Social Media
+                <span>Design</span>
               </h3>
-
 
               <p>
 
-                Scroll-stopping social media visuals designed to give
-                your content a consistent and professional look.
+                Clean and engaging visual content that gives
+                your social presence a stronger identity.
 
               </p>
 
+            </div>
+
+
+            <div class="service-icon">
+
+              <span>↗</span>
 
             </div>
 
 
-            <div class="service-arrow">
-
-              ↗
-
+            <div class="service-hover-number">
+              02
             </div>
-
 
           </article>
 
@@ -407,111 +640,151 @@
         </div>
 
 
-      </div>
 
+        <div class="services-footer reveal-up">
+
+          <span>
+            Design × Development × Creativity
+          </span>
+
+          <span>
+            Let's create something meaningful.
+          </span>
+
+        </div>
+
+
+      </div>
 
     </section>
 
 
 
-    <!-- ================= SKILLS ================= -->
+    <!-- =================================================
+         SKILLS
+    ================================================== -->
 
-    <section class="section container" id="skills">
-
-
-      <div class="section-heading reveal">
-
-
-        <span>Capabilities</span>
-
-
-        <h2>
-
-          Tools for turning ideas
-
-          <em>into reality.</em>
-
-        </h2>
-
-
-      </div>
-
-
-
-      <div class="skills-grid reveal">
-
-
-        <div class="skill">
-
-          HTML
-
-        </div>
-
-
-        <div class="skill">
-
-          CSS
-
-        </div>
-
-
-        <div class="skill">
-
-          JavaScript
-
-        </div>
-
-
-        <div class="skill">
-
-          Responsive Design
-
-        </div>
-
-
-        <div class="skill">
-
-          Web Design
-
-        </div>
-
-
-        <div class="skill">
-
-          Social Media Design
-
-        </div>
-
-
-        <div class="skill">
-
-          Canva
-
-        </div>
-
-
-      </div>
-
-
-    </section>
-
-
-
-    <!-- ================= WORK ================= -->
-
-    <section class="section work-section" id="work">
-
+    <section class="skills section">
 
       <div class="container">
 
 
-        <div class="section-heading reveal">
+        <div class="section-label reveal-up">
+
+          <span>04</span>
+
+          <span>CAPABILITIES</span>
+
+        </div>
 
 
-          <span>Selected work</span>
+        <div class="skills-heading">
+
+          <h2 class="reveal-up">
+
+            Tools for turning
+
+            <em>ideas into reality.</em>
+
+          </h2>
+
+        </div>
 
 
-          <h2>
+        <div class="skills-marquee">
+
+          <div class="skills-track">
+
+            <span>HTML</span>
+            <i>✦</i>
+
+            <span>CSS</span>
+            <i>✦</i>
+
+            <span>JAVASCRIPT</span>
+            <i>✦</i>
+
+            <span>WEB DESIGN</span>
+            <i>✦</i>
+
+            <span>RESPONSIVE DESIGN</span>
+            <i>✦</i>
+
+            <span>SOCIAL MEDIA</span>
+            <i>✦</i>
+
+            <span>CANVA</span>
+            <i>✦</i>
+
+          </div>
+
+        </div>
+
+
+        <div class="skill-grid reveal-up">
+
+          <div class="skill-box">
+            <span>01</span>
+            <strong>HTML</strong>
+          </div>
+
+          <div class="skill-box">
+            <span>02</span>
+            <strong>CSS</strong>
+          </div>
+
+          <div class="skill-box">
+            <span>03</span>
+            <strong>JavaScript</strong>
+          </div>
+
+          <div class="skill-box">
+            <span>04</span>
+            <strong>Web Design</strong>
+          </div>
+
+          <div class="skill-box">
+            <span>05</span>
+            <strong>Responsive Design</strong>
+          </div>
+
+          <div class="skill-box">
+            <span>06</span>
+            <strong>Social Media Design</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         WORK
+    ================================================== -->
+
+    <section
+      class="work section"
+      id="work"
+    >
+
+      <div class="container">
+
+
+        <div class="section-header">
+
+          <div class="section-label reveal-up">
+
+            <span>05</span>
+
+            <span>SELECTED WORK</span>
+
+          </div>
+
+
+          <h2 class="section-title reveal-up">
 
             The best is
 
@@ -519,33 +792,38 @@
 
           </h2>
 
-
         </div>
 
 
 
-        <div class="coming-soon reveal">
+        <div class="work-card reveal-scale">
 
 
-          <div class="coming-number">
+          <div class="work-background"></div>
 
+
+          <div class="work-grid-pattern"></div>
+
+
+          <div class="work-number">
             02
+          </div>
+
+
+          <div class="work-status">
+
+            <span></span>
+
+            PORTFOLIO IN PROGRESS
 
           </div>
 
 
+          <div class="work-content">
 
-          <div class="coming-content">
-
-
-            <span class="status">
-
-              <span></span>
-
-              Portfolio in progress
-
-            </span>
-
+            <p class="work-eyebrow">
+              BUILDING IN PUBLIC
+            </p>
 
 
             <h3>
@@ -554,22 +832,25 @@
 
               <br>
 
-              Coming soon.
+              <span>Coming soon.</span>
 
             </h3>
-
 
 
             <p>
 
               I'm currently building and documenting a collection
-              of web and creative projects. New work will appear here soon.
+              of web and creative projects. New work will appear
+              here as it becomes ready.
 
             </p>
 
 
-
-            <a href="#contact" class="button button-dark">
+            <a
+              href="#contact"
+              class="button button-dark magnetic"
+              data-cursor="button"
+            >
 
               Start a project
 
@@ -577,8 +858,12 @@
 
             </a>
 
-
           </div>
+
+
+          <div class="work-orbit orbit-one"></div>
+
+          <div class="work-orbit orbit-two"></div>
 
 
         </div>
@@ -586,73 +871,120 @@
 
       </div>
 
+    </section>
+
+
+
+    <!-- =================================================
+         PERSONAL PHOTO STRIP
+    ================================================== -->
+
+    <section class="photo-strip">
+
+      <div class="photo-strip-track">
+
+        <div class="strip-image">
+          <img
+            src="./assets/adix-bike.jpg"
+            alt="Adix Mehra"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="strip-image">
+          <img
+            src="./assets/adix-bike-2.jpg"
+            alt="Adix Mehra"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="strip-image">
+          <img
+            src="./assets/adix-road.jpg"
+            alt="Adix Mehra"
+            loading="lazy"
+          >
+        </div>
+
+      </div>
 
     </section>
 
 
 
-    <!-- ================= CONTACT ================= -->
+    <!-- =================================================
+         CONTACT
+    ================================================== -->
 
-    <section class="contact-section" id="contact">
-
+    <section
+      class="contact section"
+      id="contact"
+    >
 
       <div class="container">
 
 
-        <div class="contact reveal">
+        <div class="contact-top reveal-up">
+
+          <div class="section-label light">
+
+            <span>06</span>
+
+            <span>CONTACT</span>
+
+          </div>
+
+        </div>
 
 
-          <span class="contact-label">
-
-            Let's work together
-
-          </span>
+        <div class="contact-main">
 
 
-
-          <h2>
+          <h2 class="contact-title reveal-up">
 
             Have an idea?
+
+            <br>
 
             <em>Let's build it.</em>
 
           </h2>
 
 
+          <p class="contact-description reveal-up">
 
-          <p>
-
-            If you have a website, social media design or creative
-            idea in mind, I'd love to hear about it.
+            Have a website idea, social media project or
+            something completely different? Let's talk.
 
           </p>
 
 
-
-          <div class="contact-actions">
+          <div class="contact-actions reveal-up">
 
 
             <a
               href="mailto:angaming472@gmail.com"
-              class="button button-light"
+              class="contact-button magnetic"
+              data-cursor="button"
             >
 
-              Email me
+              <span>Email me</span>
 
               <span>↗</span>
 
             </a>
 
 
-
             <a
               href="https://www.instagram.com/adixmehra/"
               target="_blank"
               rel="noopener noreferrer"
-              class="button button-outline"
+              class="contact-button secondary magnetic"
+              data-cursor="button"
             >
 
-              Instagram
+              <span>Instagram</span>
 
               <span>↗</span>
 
@@ -665,8 +997,20 @@
         </div>
 
 
-      </div>
+        <div class="contact-bottom reveal-up">
 
+          <span>
+            angaming472@gmail.com
+          </span>
+
+          <span>
+            India
+          </span>
+
+        </div>
+
+
+      </div>
 
     </section>
 
@@ -675,60 +1019,67 @@
 
 
 
-  <!-- ================= FOOTER ================= -->
+  <!-- =================================================
+       FOOTER
+  ================================================== -->
 
   <footer>
-
 
     <div class="container footer-inner">
 
 
       <div class="footer-brand">
 
-        <strong>
-
+        <a href="#home">
           Adix Mehra
-
-        </strong>
-
+        </a>
 
         <span>
-
           Creative Developer
-
         </span>
-
 
       </div>
 
 
+      <div class="footer-links">
 
-      <a href="#home">
+        <a href="#about">About</a>
 
+        <a href="#services">Services</a>
+
+        <a href="#work">Work</a>
+
+        <a href="#contact">Contact</a>
+
+      </div>
+
+
+      <a
+        href="#home"
+        class="back-top"
+      >
         Back to top ↑
-
       </a>
 
 
-
-      <span class="copyright">
+      <div class="footer-copy">
 
         © 2026 Adix Mehra
 
-      </span>
+      </div>
 
 
     </div>
-
 
   </footer>
 
 
 
-  <!-- JavaScript -->
+  <!-- =================================================
+       JAVASCRIPT
+  ================================================== -->
 
   <script src="./script.js"></script>
-
 
 </body>
 </html>
