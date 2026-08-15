@@ -2,14 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <meta
     name="description"
-    content="Adix Mehra — Creative Designer and Web Creator"
+    content="Adix Mehra — Creative Designer, Web Creator and Digital Artist"
   >
 
-  <meta name="theme-color" content="#08080b">
+  <meta name="theme-color" content="#08080d">
 
   <title>Adix Mehra | Portfolio</title>
 
@@ -22,40 +26,64 @@
     rel="stylesheet"
   >
 
-  <!-- Main CSS -->
+  <!-- MAIN CSS -->
   <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 
-  <!-- =========================
+  <!-- ================================
+       LOADING SCREEN
+  ================================= -->
+
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <div class="loader-logo">
+        <span>A</span>DIX MEHRA
+      </div>
+
+      <div class="loader-line">
+        <span></span>
+      </div>
+
+      <p>Loading portfolio...</p>
+    </div>
+  </div>
+
+
+  <!-- ================================
        HEADER / NAVBAR
-  ========================== -->
+  ================================= -->
 
   <header class="header">
 
-    <nav class="nav container">
+    <nav class="nav">
 
-      <a class="logo" href="#home">
-        <span>A</span>DIX MEHRA
-      </a>
+      <div class="nav-inner">
 
-      <button
-        class="menu"
-        aria-label="Open menu"
-        aria-expanded="false"
-      >
-        ☰
-      </button>
+        <a class="logo" href="#home">
+          <span>A</span>DIX MEHRA
+        </a>
 
-      <div class="nav-links">
+        <button
+          class="menu"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
 
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
+        <div class="nav-links">
+
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+
+        </div>
 
       </div>
 
@@ -64,16 +92,16 @@
   </header>
 
 
-  <!-- =========================
+  <!-- ================================
        MAIN
-  ========================== -->
+  ================================= -->
 
   <main>
 
 
-    <!-- =========================
+    <!-- ================================
          HERO
-    ========================== -->
+    ================================= -->
 
     <section class="hero container" id="home">
 
@@ -116,7 +144,7 @@
       </div>
 
 
-      <!-- HERO VISUAL -->
+      <!-- HERO IMAGE -->
 
       <div class="hero-visual reveal">
 
@@ -126,35 +154,20 @@
 
           <img
             class="avatar photo"
-            src="assets/adix-profile.jpg"
+            src="./assets/adix-profile.jpg"
             alt="Adix Mehra"
           >
 
-          <div>
-
-            <strong>
-              Adix Mehra
-            </strong>
-
-            <small>
-              Designer · Creator
-            </small>
-
+          <div class="avatar-info">
+            <strong>Adix Mehra</strong>
+            <small>Designer · Creator</small>
           </div>
-
-          <i></i>
 
         </div>
 
-
         <div class="floating-card glass">
-
           &lt;WEB/&gt;
-
-          <small>
-            Creative Development
-          </small>
-
+          <small>Creative Development</small>
         </div>
 
       </div>
@@ -162,20 +175,19 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- ================================
          ABOUT
-    ========================== -->
+    ================================= -->
 
     <section
       class="section container"
       id="about"
     >
 
-      <div class="section-title">
+      <div class="section-title reveal">
 
-        <small>
-          01 / ABOUT
-        </small>
+        <small>01 / ABOUT</small>
 
         <h2>
           A little bit
@@ -191,17 +203,15 @@
 
           <p>
             I'm a creative learner focused on
-            <strong>
-              design, websites and digital content.
-            </strong>
-            I enjoy turning simple ideas into
-            polished visual experiences.
+            <strong>design, websites and digital content.</strong>
+            I enjoy turning simple ideas into polished
+            visual experiences.
           </p>
 
           <p>
-            This portfolio is a growing collection
-            of selected work, creative experiments
-            and future projects.
+            This portfolio is a growing collection of
+            selected work, creative experiments and
+            future projects.
           </p>
 
         </div>
@@ -209,42 +219,19 @@
 
         <div class="stats">
 
-          <div class="glass stat">
-
-            <strong>
-              03+
-            </strong>
-
-            <small>
-              Featured Projects
-            </small>
-
+          <div class="glass stat reveal">
+            <strong>03+</strong>
+            <small>Featured Projects</small>
           </div>
 
-
-          <div class="glass stat">
-
-            <strong>
-              06+
-            </strong>
-
-            <small>
-              Creative Skills
-            </small>
-
+          <div class="glass stat reveal">
+            <strong>06+</strong>
+            <small>Creative Skills</small>
           </div>
 
-
-          <div class="glass stat">
-
-            <strong>
-              100%
-            </strong>
-
-            <small>
-              Curiosity
-            </small>
-
+          <div class="glass stat reveal">
+            <strong>100%</strong>
+            <small>Curiosity</small>
           </div>
 
         </div>
@@ -254,20 +241,19 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- ================================
          SKILLS
-    ========================== -->
+    ================================= -->
 
     <section
       class="section container"
       id="skills"
     >
 
-      <div class="section-title">
+      <div class="section-title reveal">
 
-        <small>
-          02 / SKILLS
-        </small>
+        <small>02 / SKILLS</small>
 
         <h2>
           Things I
@@ -279,99 +265,52 @@
 
       <div class="grid skills">
 
-        <article class="glass card">
-
+        <article class="glass card reveal">
           <b>01</b>
-
-          <h3>
-            Graphic Design
-          </h3>
-
+          <h3>Graphic Design</h3>
           <p>
-            Creative layouts, posters
-            and visual assets.
+            Creative layouts, posters and visual assets.
           </p>
-
         </article>
 
-
-        <article class="glass card">
-
+        <article class="glass card reveal">
           <b>02</b>
-
-          <h3>
-            Web Design
-          </h3>
-
+          <h3>Web Design</h3>
           <p>
-            Modern responsive website
-            interfaces.
+            Modern responsive website interfaces.
           </p>
-
         </article>
 
-
-        <article class="glass card">
-
+        <article class="glass card reveal">
           <b>03</b>
-
-          <h3>
-            HTML & CSS
-          </h3>
-
+          <h3>HTML & CSS</h3>
           <p>
-            Clean structure and
-            responsive layouts.
+            Clean structure and responsive layouts.
           </p>
-
         </article>
 
-
-        <article class="glass card">
-
+        <article class="glass card reveal">
           <b>04</b>
-
-          <h3>
-            JavaScript
-          </h3>
-
+          <h3>JavaScript</h3>
           <p>
-            Interactive website features
-            and effects.
+            Interactive website features and effects.
           </p>
-
         </article>
 
-
-        <article class="glass card">
-
+        <article class="glass card reveal">
           <b>05</b>
-
-          <h3>
-            Canva
-          </h3>
-
+          <h3>Canva</h3>
           <p>
-            Social media creatives
-            and promotional designs.
+            Social media creatives and promotional designs.
           </p>
-
         </article>
 
-
-        <article class="glass card">
-
+        <article class="glass card reveal">
           <b>06</b>
-
-          <h3>
-            Branding
-          </h3>
-
+          <h3>Branding</h3>
           <p>
-            Visual identity and
-            brand consistency.
+            Visual identity and brand consistency.
           </p>
-
         </article>
 
       </div>
@@ -379,20 +318,19 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- ================================
          PROJECTS
-    ========================== -->
+    ================================= -->
 
     <section
       class="section container"
       id="projects"
     >
 
-      <div class="section-title">
+      <div class="section-title reveal">
 
-        <small>
-          03 / SELECTED WORK
-        </small>
+        <small>03 / SELECTED WORK</small>
 
         <h2>
           Projects with
@@ -405,112 +343,108 @@
       <div class="grid projects">
 
 
-        <!-- =================================
-             PROJECT 01
-             BAGLAMUKHI PRASAD POINT
-        ================================== -->
-
         <article class="glass project reveal">
 
-          <img
-            class="project-photo"
-            src="assets/baglamukhi-prasad-point.jpg"
-            alt="Baglamukhi Prasad Point Kotla Website"
-          >
+          <div class="project-photo">
 
-          <small>
-            WEB DESIGN / CLIENT PROJECT
-          </small>
+            <img
+              src="./assets/adix-bike.jpg"
+              alt="Adix Mehra on a motorcycle"
+              loading="lazy"
+            >
 
-          <h3>
-            Baglamukhi Prasad Point Kotla
-          </h3>
+          </div>
 
-          <p>
-            A modern responsive website concept
-            designed for Baglamukhi Prasad Point
-            Kotla.
-          </p>
+          <div class="project-content">
+
+            <small>PERSONAL / CREATIVE</small>
+
+            <h3>Creative Visual</h3>
+
+            <p>
+              A personal visual from my creative collection.
+            </p>
+
+          </div>
 
         </article>
 
 
-        <!-- =================================
-             PROJECT 02
-        ================================== -->
 
         <article class="glass project reveal">
 
-          <img
-            class="project-photo"
-            src="assets/adix-road.jpg"
-            alt="Adix Mehra outdoors"
-          >
+          <div class="project-photo">
 
-          <small>
-            PERSONAL / CREATIVE
-          </small>
+            <img
+              src="./assets/adix-road.jpg"
+              alt="Adix Mehra outdoors"
+              loading="lazy"
+            >
 
-          <h3>
-            Personal Visuals
-          </h3>
+          </div>
 
-          <p>
-            Photography and visual moments
-            from my personal collection.
-          </p>
+          <div class="project-content">
+
+            <small>PERSONAL / CREATIVE</small>
+
+            <h3>Personal Visuals</h3>
+
+            <p>
+              Photography and visual moments from my
+              personal collection.
+            </p>
+
+          </div>
 
         </article>
 
 
-        <!-- =================================
-             PROJECT 03
-        ================================== -->
 
         <article class="glass project reveal">
 
-          <img
-            class="project-photo"
-            src="assets/adix-bike-2.jpg"
-            alt="Adix Mehra with motorcycle"
-          >
+          <div class="project-photo">
 
-          <small>
-            WEB DESIGN
-          </small>
+            <img
+              src="./assets/adix-bike-2.jpg"
+              alt="Adix Mehra with motorcycle"
+              loading="lazy"
+            >
 
-          <h3>
-            Professional Website
-          </h3>
+          </div>
 
-          <p>
-            A modern responsive website concept
-            focused on clarity and mobile-first
-            design.
-          </p>
+          <div class="project-content">
+
+            <small>WEB DESIGN</small>
+
+            <h3>Professional Website</h3>
+
+            <p>
+              A modern responsive website concept focused
+              on clarity and mobile-first design.
+            </p>
+
+          </div>
 
         </article>
-
 
       </div>
 
     </section>
 
 
-    <!-- =========================
+
+    <!-- ================================
          SERVICES
-    ========================== -->
+    ================================= -->
 
     <section
       class="section container"
       id="services"
     >
 
-      <div class="section-title">
+      <div class="section-title reveal">
 
-        <small>
-          04 / SERVICES
-        </small>
+        <small>04 / SERVICES</small>
 
         <h2>
           What I can
@@ -520,73 +454,30 @@
       </div>
 
 
-      <div class="services glass">
+      <div class="services">
 
-        <div>
-
-          <span>
-            01
-          </span>
-
-          <strong>
-            Website Design
-          </strong>
-
-          <small>
-            Modern responsive websites
-          </small>
-
+        <div class="glass service reveal">
+          <span>01</span>
+          <strong>Website Design</strong>
+          <small>Modern responsive websites</small>
         </div>
 
-
-        <div>
-
-          <span>
-            02
-          </span>
-
-          <strong>
-            Graphic Design
-          </strong>
-
-          <small>
-            Creative visual assets
-          </small>
-
+        <div class="glass service reveal">
+          <span>02</span>
+          <strong>Graphic Design</strong>
+          <small>Creative visual assets</small>
         </div>
 
-
-        <div>
-
-          <span>
-            03
-          </span>
-
-          <strong>
-            Social Media
-          </strong>
-
-          <small>
-            Content & promotional designs
-          </small>
-
+        <div class="glass service reveal">
+          <span>03</span>
+          <strong>Social Media</strong>
+          <small>Content & promotional designs</small>
         </div>
 
-
-        <div>
-
-          <span>
-            04
-          </span>
-
-          <strong>
-            Branding
-          </strong>
-
-          <small>
-            Visual identity
-          </small>
-
+        <div class="glass service reveal">
+          <span>04</span>
+          <strong>Branding</strong>
+          <small>Visual identity</small>
         </div>
 
       </div>
@@ -594,9 +485,10 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- ================================
          CONTACT
-    ========================== -->
+    ================================= -->
 
     <section
       class="section container"
@@ -605,22 +497,18 @@
 
       <div class="contact glass reveal">
 
-        <small>
-          05 / CONTACT
-        </small>
+        <small>05 / CONTACT</small>
 
         <h2>
           Have an idea?
           <br>
-          <span>
-            Let's make it real.
-          </span>
+          <span>Let's make it real.</span>
         </h2>
 
         <p>
-          For collaborations, creative projects
-          or website work, connect with me through
-          your preferred platform.
+          For collaborations, creative projects or
+          website work, connect with me through your
+          preferred platform.
         </p>
 
 
@@ -632,7 +520,6 @@
           >
             Email Me ↗
           </a>
-
 
           <a
             class="btn secondary"
@@ -658,13 +545,14 @@
   </main>
 
 
-  <!-- =========================
+
+  <!-- ================================
        FOOTER
-  ========================== -->
+  ================================= -->
 
   <footer>
 
-    <div class="container">
+    <div class="container footer-inner">
 
       <span>
         © 2026 Adix Mehra
@@ -679,7 +567,9 @@
   </footer>
 
 
-  <!-- JavaScript -->
+
+  <!-- MAIN JAVASCRIPT -->
+
   <script src="./script.js"></script>
 
 </body>
