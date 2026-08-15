@@ -1,13 +1,13 @@
-/* ==================================================
+/* =====================================================
    ADIX MEHRA PORTFOLIO
-   Premium Dark Portfolio
+   Modern Dark Portfolio
    Responsive + Animated
-================================================== */
+===================================================== */
 
 
-/* ==================================================
+/* =====================================================
    RESET
-================================================== */
+===================================================== */
 
 * {
   box-sizing: border-box;
@@ -29,9 +29,9 @@ body {
 
   background:
     radial-gradient(
-      circle at 80% 10%,
+      circle at 85% 10%,
       rgba(144, 123, 255, 0.08),
-      transparent 30%
+      transparent 28%
     ),
     #08080d;
 
@@ -53,132 +53,44 @@ button {
   font: inherit;
 }
 
-::selection {
-  background: #907bff;
-  color: #08080d;
-}
-
-
-/* ==================================================
-   CONTAINER
-================================================== */
-
 .container {
   width: min(1120px, calc(100% - 40px));
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline: auto;
 }
 
 
-/* ==================================================
+/* =====================================================
    GLASS
-================================================== */
+===================================================== */
 
 .glass {
-  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.055),
+      rgba(255, 255, 255, 0.018)
+    );
 
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 }
 
 
-/* ==================================================
-   LOADER
-================================================== */
-
-.loader {
-  position: fixed;
-  inset: 0;
-
-  z-index: 99999;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #08080d;
-
-  transition:
-    opacity 0.6s ease,
-    visibility 0.6s ease;
-}
-
-.loader.hide {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.loader-content {
-  width: min(320px, 80%);
-  text-align: center;
-}
-
-.loader-logo {
-  font-family: "Space Grotesk", sans-serif;
-
-  font-size: 26px;
-  font-weight: 800;
-
-  letter-spacing: 2px;
-}
-
-.loader-logo span {
-  color: #907bff;
-}
-
-.loader-line {
-  width: 100%;
-  height: 2px;
-
-  margin-top: 25px;
-
-  overflow: hidden;
-
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.loader-line span {
-  display: block;
-
-  width: 40%;
-  height: 100%;
-
-  background: #907bff;
-
-  animation: loading 1.4s ease-in-out infinite;
-}
-
-.loader-content p {
-  margin-top: 15px;
-
-  color: #777783;
-
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-
-/* ==================================================
-   HEADER
-================================================== */
+/* =====================================================
+   HEADER / NAVBAR
+===================================================== */
 
 .header {
   position: relative;
   z-index: 1000;
 }
 
-
-/* ==================================================
-   NAVBAR
-================================================== */
-
 .nav {
   position: sticky;
   top: 0;
+  z-index: 1000;
 
   width: 100%;
 
@@ -194,8 +106,7 @@ button {
 
 .nav-inner {
   width: min(1120px, 100%);
-
-  margin: auto;
+  margin-inline: auto;
 
   display: flex;
   align-items: center;
@@ -204,21 +115,13 @@ button {
   gap: 20px;
 }
 
-
-/* ==================================================
-   LOGO
-================================================== */
-
 .logo {
-  display: inline-block;
-
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 24px;
-  font-weight: 800;
+  font-size: 23px;
+  font-weight: 700;
 
   letter-spacing: 1px;
-
   white-space: nowrap;
 }
 
@@ -227,15 +130,15 @@ button {
 }
 
 
-/* ==================================================
-   NAV LINKS
-================================================== */
+/* NAV LINKS */
 
 .nav-links {
   display: flex;
   align-items: center;
 
-  gap: 26px;
+  gap: 25px;
+
+  list-style: none;
 }
 
 .nav-links a {
@@ -279,9 +182,7 @@ button {
 }
 
 
-/* ==================================================
-   MOBILE MENU BUTTON
-================================================== */
+/* MENU BUTTON */
 
 .menu {
   display: none;
@@ -289,8 +190,7 @@ button {
   width: 44px;
   height: 44px;
 
-  border: 1px solid rgba(255, 255, 255, 0.12);
-
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
 
   background: rgba(255, 255, 255, 0.04);
@@ -300,24 +200,12 @@ button {
   font-size: 23px;
 
   cursor: pointer;
-
-  transition:
-    background 0.25s ease,
-    transform 0.25s ease;
-}
-
-.menu:hover {
-  background: rgba(144, 123, 255, 0.12);
-}
-
-.menu:active {
-  transform: scale(0.94);
 }
 
 
-/* ==================================================
+/* =====================================================
    HERO
-================================================== */
+===================================================== */
 
 .hero {
   position: relative;
@@ -330,98 +218,103 @@ button {
 
   align-items: center;
 
-  gap: 60px;
+  gap: 70px;
 
-  padding-top: 90px;
-  padding-bottom: 90px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 
   overflow: hidden;
 }
+
+
+/* HERO GLOW */
 
 .hero::before {
   content: "";
 
   position: absolute;
 
-  width: 500px;
-  height: 500px;
+  width: 420px;
+  height: 420px;
 
-  top: 5%;
-  right: -180px;
+  top: 8%;
+  right: -150px;
 
   border-radius: 50%;
 
-  background: rgba(144, 123, 255, 0.14);
+  background:
+    rgba(144, 123, 255, 0.16);
 
-  filter: blur(100px);
+  filter: blur(90px);
 
   pointer-events: none;
 
-  animation:
-    glow 5s ease-in-out infinite;
+  animation: glow 6s ease-in-out infinite;
 }
 
 
-/* ==================================================
-   HERO COPY
-================================================== */
+/* HERO COPY */
 
 .hero-copy {
   position: relative;
-
   z-index: 2;
 
   max-width: 720px;
 }
 
 .badge {
-  display: inline-flex;
-
-  align-items: center;
-
-  padding: 8px 14px;
+  display: inline-block;
 
   margin-bottom: 22px;
 
-  border: 1px solid rgba(144, 123, 255, 0.35);
+  padding: 8px 14px;
+
+  border:
+    1px solid
+    rgba(144, 123, 255, 0.45);
 
   border-radius: 50px;
 
-  background: rgba(144, 123, 255, 0.06);
-
-  color: #a99aff;
+  color: #aa9cff;
 
   font-size: 12px;
 
   letter-spacing: 2px;
+
+  animation:
+    fadeUp 0.7s ease both;
 }
 
 .hero h1 {
+  max-width: 900px;
+
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: clamp(44px, 6vw, 78px);
+  font-size: clamp(45px, 6vw, 78px);
 
   line-height: 1.02;
 
   letter-spacing: -3px;
 
-  font-weight: 700;
+  animation:
+    fadeUp 0.7s 0.12s ease both;
 }
 
 .hero h1 span {
-  display: inline;
-
   color: #907bff;
 }
 
 .hero p {
-  max-width: 620px;
+  max-width: 650px;
 
   margin-top: 25px;
 
-  color: #9999a8;
+  color: #a8a8b4;
 
   font-size: 17px;
+
+  animation:
+    fadeUp 0.7s 0.22s ease both;
 }
 
 .hero p strong {
@@ -429,22 +322,20 @@ button {
 }
 
 
-/* ==================================================
+/* =====================================================
    BUTTONS
-================================================== */
+===================================================== */
 
 .buttons {
   display: flex;
-
   flex-wrap: wrap;
 
   gap: 12px;
 
   margin-top: 30px;
-}
 
-.buttons.center {
-  justify-content: center;
+  animation:
+    fadeUp 0.7s 0.32s ease both;
 }
 
 .btn {
@@ -453,11 +344,11 @@ button {
   align-items: center;
   justify-content: center;
 
-  min-height: 50px;
+  min-height: 48px;
 
-  padding: 0 23px;
+  padding: 0 22px;
 
-  border-radius: 13px;
+  border-radius: 12px;
 
   font-size: 14px;
   font-weight: 700;
@@ -478,37 +369,36 @@ button {
   color: #08080d;
 
   box-shadow:
-    0 10px 35px rgba(144, 123, 255, 0.22);
+    0 12px 35px
+    rgba(144, 123, 255, 0.22);
 }
 
 .primary:hover {
   box-shadow:
-    0 15px 45px rgba(144, 123, 255, 0.38);
+    0 18px 45px
+    rgba(144, 123, 255, 0.35);
 }
 
 .secondary {
-  border: 1px solid rgba(255, 255, 255, 0.13);
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.13);
 
-  background: rgba(255, 255, 255, 0.04);
+  background:
+    rgba(255, 255, 255, 0.04);
 
   color: #ffffff;
 }
 
-.secondary:hover {
-  background: rgba(255, 255, 255, 0.08);
-}
 
-
-/* ==================================================
+/* =====================================================
    HERO VISUAL
-================================================== */
+===================================================== */
 
 .hero-visual {
   position: relative;
 
-  z-index: 2;
-
-  min-height: 500px;
+  min-height: 460px;
 
   display: flex;
 
@@ -524,30 +414,28 @@ button {
 
   border-radius: 50%;
 
-  background: rgba(144, 123, 255, 0.17);
+  background:
+    rgba(144, 123, 255, 0.13);
 
-  filter: blur(70px);
+  filter: blur(65px);
 
   animation:
     glow 5s ease-in-out infinite;
 }
 
-
-/* ==================================================
-   AVATAR CARD
-================================================== */
-
 .avatar-card {
   position: relative;
+  z-index: 2;
 
-  width: min(430px, 100%);
+  width: min(390px, 100%);
 
   overflow: hidden;
 
   border-radius: 28px;
 
   box-shadow:
-    0 30px 80px rgba(0, 0, 0, 0.45);
+    0 30px 80px
+    rgba(0, 0, 0, 0.45);
 
   animation:
     float 5s ease-in-out infinite;
@@ -555,61 +443,38 @@ button {
 
 .avatar-card img {
   width: 100%;
-
-  aspect-ratio: 4 / 5;
+  height: 440px;
 
   object-fit: cover;
-
-  transition:
-    transform 0.6s ease;
-}
-
-.avatar-card:hover img {
-  transform: scale(1.04);
 }
 
 .avatar-info {
-  position: absolute;
-
-  left: 20px;
-  right: 20px;
-  bottom: 20px;
-
   display: flex;
 
   flex-direction: column;
 
-  padding: 16px 18px;
-
-  border-radius: 16px;
-
-  background: rgba(8, 8, 13, 0.72);
-
-  border: 1px solid rgba(255, 255, 255, 0.1);
-
-  backdrop-filter: blur(15px);
+  padding: 18px 20px;
 }
 
 .avatar-info strong {
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .avatar-info small {
   margin-top: 3px;
 
-  color: #aaaab6;
+  color: #9999a7;
+
+  font-size: 12px;
 }
-
-
-/* ==================================================
-   FLOATING CARD
-================================================== */
 
 .floating-card {
   position: absolute;
 
-  right: -10px;
-  bottom: 45px;
+  z-index: 4;
+
+  right: -5px;
+  bottom: 35px;
 
   display: flex;
 
@@ -617,39 +482,38 @@ button {
 
   gap: 3px;
 
-  padding: 15px 18px;
+  padding: 16px 18px;
 
-  border-radius: 15px;
+  border-radius: 16px;
 
+  color: #ffffff;
+
+  box-shadow:
+    0 20px 45px
+    rgba(0, 0, 0, 0.35);
+
+  animation:
+    float 4s 0.5s ease-in-out infinite;
+}
+
+.floating-card strong {
   color: #907bff;
 
   font-family: monospace;
 
   font-size: 16px;
-
-  font-weight: 700;
-
-  box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.35);
-
-  animation:
-    float 4s ease-in-out 0.5s infinite;
 }
 
 .floating-card small {
-  color: #a5a5b1;
-
-  font-family: "Inter", sans-serif;
+  color: #9b9ba7;
 
   font-size: 11px;
-
-  font-weight: 400;
 }
 
 
-/* ==================================================
+/* =====================================================
    SECTIONS
-================================================== */
+===================================================== */
 
 .section {
   padding-top: 110px;
@@ -669,7 +533,7 @@ button {
 
   font-size: 12px;
 
-  font-weight: 700;
+  font-weight: 600;
 
   letter-spacing: 4px;
 }
@@ -679,7 +543,7 @@ button {
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: clamp(38px, 5vw, 66px);
+  font-size: clamp(38px, 5vw, 65px);
 
   line-height: 1.05;
 
@@ -691,14 +555,16 @@ button {
 }
 
 
-/* ==================================================
+/* =====================================================
    ABOUT
-================================================== */
+===================================================== */
 
 .about-grid {
   display: grid;
 
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(350px, 0.8fr);
 
   gap: 60px;
 
@@ -706,13 +572,13 @@ button {
 }
 
 .about-copy {
-  max-width: 620px;
+  max-width: 650px;
 }
 
 .about-copy p {
   margin-bottom: 20px;
 
-  color: #9999a8;
+  color: #a5a5b1;
 
   font-size: 17px;
 }
@@ -722,28 +588,27 @@ button {
 }
 
 
-/* ==================================================
-   STATS
-================================================== */
+/* STATS */
 
 .stats {
   display: grid;
 
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns:
+    repeat(3, 1fr);
 
-  gap: 15px;
+  gap: 14px;
 }
 
 .stat {
   min-height: 150px;
-
-  padding: 25px;
 
   display: flex;
 
   flex-direction: column;
 
   justify-content: center;
+
+  padding: 20px;
 
   border-radius: 20px;
 
@@ -755,47 +620,51 @@ button {
 .stat:hover {
   transform: translateY(-6px);
 
-  border-color: rgba(144, 123, 255, 0.4);
+  border-color:
+    rgba(144, 123, 255, 0.4);
 }
 
 .stat strong {
-  color: #907bff;
-
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 34px;
+  font-size: 32px;
+
+  color: #ffffff;
 }
 
 .stat small {
   margin-top: 5px;
 
-  color: #9999a8;
+  color: #858591;
 
-  font-size: 12px;
+  font-size: 11px;
 }
 
 
-/* ==================================================
+/* =====================================================
    GRID
-================================================== */
+===================================================== */
 
 .grid {
   display: grid;
-
-  gap: 20px;
 }
 
 
-/* ==================================================
+/* =====================================================
    SKILLS
-================================================== */
+===================================================== */
 
 .skills {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
 }
 
 .card {
-  min-height: 220px;
+  position: relative;
+
+  min-height: 210px;
 
   padding: 28px;
 
@@ -810,43 +679,50 @@ button {
 .card:hover {
   transform: translateY(-8px);
 
-  border-color: rgba(144, 123, 255, 0.5);
+  border-color:
+    rgba(144, 123, 255, 0.55);
 
   box-shadow:
-    0 25px 60px rgba(0, 0, 0, 0.28);
+    0 20px 55px
+    rgba(0, 0, 0, 0.3);
 }
 
-.card b {
+.card > b {
+  display: block;
+
+  margin-bottom: 25px;
+
   color: #907bff;
 
-  font-family: monospace;
+  font-size: 12px;
 
-  font-size: 13px;
+  letter-spacing: 2px;
 }
 
 .card h3 {
-  margin-top: 25px;
+  margin-bottom: 9px;
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 23px;
+  font-size: 22px;
 }
 
 .card p {
-  margin-top: 10px;
-
-  color: #92929e;
+  color: #8f8f9c;
 
   font-size: 14px;
 }
 
 
-/* ==================================================
+/* =====================================================
    PROJECTS
-================================================== */
+===================================================== */
 
 .projects {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 22px;
 }
 
 .project {
@@ -863,24 +739,27 @@ button {
 .project:hover {
   transform: translateY(-8px);
 
-  border-color: rgba(144, 123, 255, 0.55);
+  border-color:
+    rgba(144, 123, 255, 0.55);
 
   box-shadow:
-    0 25px 60px rgba(0, 0, 0, 0.35);
+    0 25px 60px
+    rgba(0, 0, 0, 0.35);
 }
 
 .project:nth-child(3) {
-  grid-column: span 2;
+  grid-column: 1 / -1;
 }
+
+
+/* PROJECT IMAGE */
 
 .project-photo {
   width: 100%;
 
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 10;
 
   overflow: hidden;
-
-  background: #101017;
 }
 
 .project-photo img {
@@ -890,15 +769,20 @@ button {
   object-fit: cover;
 
   transition:
-    transform 0.6s ease,
-    filter 0.6s ease;
+    transform 0.55s ease,
+    filter 0.55s ease;
 }
 
 .project:hover .project-photo img {
   transform: scale(1.05);
 
-  filter: saturate(1.12);
+  filter:
+    saturate(1.1)
+    brightness(1.04);
 }
+
+
+/* PROJECT CONTENT */
 
 .project-content {
   padding: 25px;
@@ -907,7 +791,7 @@ button {
 .project-content small {
   color: #907bff;
 
-  font-size: 11px;
+  font-size: 10px;
 
   font-weight: 700;
 
@@ -915,7 +799,7 @@ button {
 }
 
 .project-content h3 {
-  margin-top: 9px;
+  margin-top: 8px;
 
   font-family: "Space Grotesk", sans-serif;
 
@@ -923,28 +807,33 @@ button {
 }
 
 .project-content p {
-  margin-top: 8px;
+  margin-top: 9px;
 
-  color: #92929e;
+  color: #9696a3;
 
   font-size: 14px;
 }
 
 
-/* ==================================================
+/* =====================================================
    SERVICES
-================================================== */
+===================================================== */
 
 .services {
   display: grid;
 
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns:
+    repeat(2, 1fr);
 
-  gap: 15px;
+  gap: 1px;
+
+  overflow: hidden;
+
+  border-radius: 24px;
 }
 
-.service {
-  min-height: 130px;
+.service-item {
+  min-height: 170px;
 
   display: flex;
 
@@ -952,78 +841,99 @@ button {
 
   justify-content: center;
 
-  padding: 25px;
+  padding: 30px;
 
-  border-radius: 18px;
+  background:
+    rgba(255, 255, 255, 0.025);
 
   transition:
-    transform 0.3s ease,
-    border-color 0.3s ease;
+    background 0.3s ease;
 }
 
-.service:hover {
-  transform: translateY(-6px);
-
-  border-color: rgba(144, 123, 255, 0.45);
+.service-item:hover {
+  background:
+    rgba(144, 123, 255, 0.06);
 }
 
-.service span {
+.service-item > span {
+  margin-bottom: 18px;
+
   color: #907bff;
 
-  font-family: monospace;
+  font-size: 11px;
 
-  font-size: 12px;
+  letter-spacing: 2px;
 }
 
-.service strong {
-  margin-top: 7px;
-
+.service-item strong {
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 20px;
+  font-size: 22px;
 }
 
-.service small {
-  margin-top: 4px;
+.service-item small {
+  margin-top: 5px;
 
-  color: #92929e;
+  color: #8d8d99;
 
-  font-size: 12px;
+  font-size: 13px;
 }
 
 
-/* ==================================================
+/* =====================================================
    CONTACT
-================================================== */
+===================================================== */
 
 .contact {
-  padding: 70px 35px;
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 75px 30px;
 
   border-radius: 30px;
 
   text-align: center;
+}
+
+.contact::before {
+  content: "";
+
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  top: -140px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
 
   background:
-    radial-gradient(
-      circle at 50% 0%,
-      rgba(144, 123, 255, 0.12),
-      transparent 55%
-    ),
-    rgba(255, 255, 255, 0.035);
+    rgba(144, 123, 255, 0.12);
+
+  filter: blur(70px);
+
+  pointer-events: none;
+}
+
+.contact > * {
+  position: relative;
+  z-index: 2;
 }
 
 .contact > small {
   color: #907bff;
 
-  font-size: 12px;
+  font-size: 11px;
 
-  font-weight: 700;
-
-  letter-spacing: 4px;
+  letter-spacing: 3px;
 }
 
 .contact h2 {
-  margin-top: 15px;
+  margin-top: 14px;
 
   font-family: "Space Grotesk", sans-serif;
 
@@ -1041,15 +951,21 @@ button {
 .contact p {
   max-width: 600px;
 
-  margin: 20px auto 0;
+  margin: 18px auto 0;
 
-  color: #9999a8;
+  color: #9696a2;
+
+  font-size: 15px;
+}
+
+.center {
+  justify-content: center;
 }
 
 .contact em {
   display: block;
 
-  margin-top: 25px;
+  margin-top: 22px;
 
   color: #777783;
 
@@ -1059,16 +975,18 @@ button {
 }
 
 
-/* ==================================================
+/* =====================================================
    FOOTER
-================================================== */
+===================================================== */
 
 footer {
-  padding: 30px 0;
+  padding: 35px 20px;
 
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.07);
 
-  color: #777783;
+  color: #6f6f7a;
 
   font-size: 13px;
 }
@@ -1076,62 +994,66 @@ footer {
 .footer-inner {
   display: flex;
 
-  justify-content: space-between;
-
   align-items: center;
+
+  justify-content: space-between;
 
   gap: 20px;
 }
 
-footer a {
-  color: #a5a5b1;
+.footer-inner a {
+  color: #9696a3;
 
   transition:
     color 0.25s ease;
 }
 
-footer a:hover {
+.footer-inner a:hover {
   color: #907bff;
 }
 
 
-/* ==================================================
+/* =====================================================
    REVEAL ANIMATION
-================================================== */
+===================================================== */
 
 .reveal {
   opacity: 0;
 
-  transform: translateY(30px);
+  transform:
+    translateY(25px);
 
   transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
+    opacity 0.7s ease,
+    transform 0.7s ease;
 }
 
 .reveal.visible {
   opacity: 1;
 
-  transform: translateY(0);
+  transform:
+    translateY(0);
 }
 
 
-/* ==================================================
-   KEYFRAME ANIMATIONS
-================================================== */
+/* =====================================================
+   GENERAL ANIMATIONS
+===================================================== */
 
-@keyframes loading {
+@keyframes fadeUp {
 
-  0% {
-    transform: translateX(-150%);
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(25px);
   }
 
-  50% {
-    transform: translateX(120%);
-  }
+  to {
+    opacity: 1;
 
-  100% {
-    transform: translateX(300%);
+    transform:
+      translateY(0);
   }
 
 }
@@ -1140,11 +1062,13 @@ footer a:hover {
 
   0%,
   100% {
-    transform: translateY(0);
+    transform:
+      translateY(0);
   }
 
   50% {
-    transform: translateY(-10px);
+    transform:
+      translateY(-10px);
   }
 
 }
@@ -1153,78 +1077,78 @@ footer a:hover {
 
   0%,
   100% {
-    transform: scale(1);
+    transform:
+      scale(1);
 
-    opacity: 0.7;
+    opacity:
+      0.7;
   }
 
   50% {
-    transform: scale(1.08);
+    transform:
+      scale(1.06);
 
-    opacity: 1;
+    opacity:
+      1;
   }
 
 }
 
 
-/* ==================================================
+/* =====================================================
    TABLET
-================================================== */
+===================================================== */
 
 @media (max-width: 900px) {
 
   .hero {
     grid-template-columns: 1fr;
 
-    gap: 40px;
+    gap: 45px;
 
-    text-align: center;
+    padding-top: 70px;
   }
 
   .hero-copy {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero p {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .buttons {
-    justify-content: center;
+    max-width: 760px;
   }
 
   .hero-visual {
-    min-height: 450px;
+    min-height: 430px;
   }
 
   .about-grid {
     grid-template-columns: 1fr;
+
+    gap: 35px;
   }
 
   .skills {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 
 }
 
 
-/* ==================================================
-   MOBILE
-================================================== */
+/* =====================================================
+   MOBILE NAVIGATION
+===================================================== */
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
 
   .container {
-    width: calc(100% - 28px);
+    width:
+      calc(100% - 28px);
   }
 
-
-  /* NAV */
-
   .nav {
-    padding: 13px 14px;
+    padding:
+      14px;
+  }
+
+  .nav-inner {
+    width: 100%;
   }
 
   .menu {
@@ -1242,7 +1166,7 @@ footer a:hover {
     left: 14px;
     right: 14px;
 
-    display: none;
+    display: flex;
 
     flex-direction: column;
 
@@ -1252,112 +1176,111 @@ footer a:hover {
 
     padding: 8px;
 
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border:
+      1px solid
+      rgba(255, 255, 255, 0.1);
 
     border-radius: 18px;
 
-    background: rgba(8, 8, 13, 0.97);
+    background:
+      rgba(9, 9, 14, 0.97);
 
     box-shadow:
-      0 20px 50px rgba(0, 0, 0, 0.45);
+      0 20px 50px
+      rgba(0, 0, 0, 0.45);
 
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+      translateY(-10px);
+
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      visibility 0.25s ease;
   }
 
   .nav-links.active {
-    display: flex;
+    opacity: 1;
 
-    animation:
-      menuOpen 0.25s ease forwards;
+    visibility: visible;
+
+    transform:
+      translateY(0);
   }
 
   .nav-links a {
+    display: block;
+
     padding: 14px;
 
     border-radius: 10px;
-
-    font-size: 15px;
   }
 
   .nav-links a:hover {
-    background: rgba(144, 123, 255, 0.08);
+    background:
+      rgba(144, 123, 255, 0.08);
   }
 
   .nav-links a::after {
     display: none;
   }
 
-
-  /* HERO */
-
   .hero {
     min-height: auto;
 
     padding-top: 70px;
-    padding-bottom: 80px;
+    padding-bottom: 75px;
   }
 
   .hero h1 {
-    font-size: clamp(40px, 12vw, 60px);
+    font-size:
+      clamp(42px, 12vw, 62px);
 
-    letter-spacing: -2px;
+    letter-spacing:
+      -2px;
   }
 
   .hero p {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .hero-visual {
-    min-height: 430px;
+    min-height: 400px;
   }
 
   .avatar-card {
-    width: min(380px, 100%);
+    width:
+      min(360px, 90%);
+  }
+
+  .avatar-card img {
+    height: 390px;
   }
 
   .floating-card {
     right: 0;
-    bottom: 25px;
+
+    bottom: 20px;
   }
 
-
-  /* SECTIONS */
-
   .section {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 75px;
+    padding-bottom: 75px;
   }
 
   .section-title {
-    margin-bottom: 35px;
+    margin-bottom: 32px;
   }
 
   .section-title h2 {
     font-size: 42px;
-
-    letter-spacing: -1.5px;
   }
-
-
-  /* STATS */
-
-  .stats {
-    grid-template-columns: 1fr;
-  }
-
-  .stat {
-    min-height: 120px;
-  }
-
-
-  /* SKILLS */
-
-  .skills {
-    grid-template-columns: 1fr;
-  }
-
-
-  /* PROJECTS */
 
   .projects {
     grid-template-columns: 1fr;
@@ -1367,33 +1290,111 @@ footer a:hover {
     grid-column: auto;
   }
 
-
-  /* SERVICES */
-
   .services {
     grid-template-columns: 1fr;
   }
 
+}
 
-  /* CONTACT */
 
-  .contact {
-    padding: 50px 20px;
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media (max-width: 520px) {
+
+  .logo {
+    font-size: 19px;
+
+    letter-spacing:
+      0.5px;
   }
 
+  .hero {
+    padding-top: 55px;
+  }
 
-  /* BUTTONS */
+  .hero h1 {
+    font-size: 43px;
+
+    line-height: 1.04;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
 
   .buttons {
     flex-direction: column;
+
+    width: 100%;
   }
 
   .btn {
     width: 100%;
   }
 
+  .hero-visual {
+    min-height: 360px;
+  }
 
-  /* FOOTER */
+  .avatar-card {
+    width: 100%;
+
+    max-width: 340px;
+  }
+
+  .avatar-card img {
+    height: 350px;
+  }
+
+  .floating-card {
+    right: -3px;
+
+    padding: 12px 14px;
+  }
+
+  .section-title h2 {
+    font-size: 36px;
+
+    letter-spacing:
+      -1.5px;
+  }
+
+  .about-grid {
+    gap: 25px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stat {
+    min-height: 110px;
+  }
+
+  .skills {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: 190px;
+
+    padding: 24px;
+  }
+
+  .project-content {
+    padding: 21px;
+  }
+
+  .contact {
+    padding:
+      55px 20px;
+  }
+
+  .contact h2 {
+    font-size: 38px;
+  }
 
   .footer-inner {
     flex-direction: column;
@@ -1404,95 +1405,26 @@ footer a:hover {
 }
 
 
-/* ==================================================
-   SMALL PHONES
-================================================== */
-
-@media (max-width: 480px) {
-
-  .logo {
-    font-size: 19px;
-
-    letter-spacing: 0.5px;
-  }
-
-  .hero {
-    padding-top: 60px;
-  }
-
-  .hero h1 {
-    font-size: 42px;
-  }
-
-  .hero-visual {
-    min-height: 390px;
-  }
-
-  .floating-card {
-    right: -3px;
-
-    padding: 12px 14px;
-
-    font-size: 14px;
-  }
-
-  .section-title h2 {
-    font-size: 36px;
-  }
-
-  .card {
-    min-height: 190px;
-
-    padding: 23px;
-  }
-
-  .project-content {
-    padding: 21px;
-  }
-
-  .project-content h3 {
-    font-size: 22px;
-  }
-
-}
-
-
-/* ==================================================
-   MENU ANIMATION
-================================================== */
-
-@keyframes menuOpen {
-
-  from {
-    opacity: 0;
-
-    transform:
-      translateY(-8px)
-      scale(0.98);
-  }
-
-  to {
-    opacity: 1;
-
-    transform:
-      translateY(0)
-      scale(1);
-  }
-
-}
-
-
-/* ==================================================
+/* =====================================================
    REDUCED MOTION
-================================================== */
+===================================================== */
 
 @media (prefers-reduced-motion: reduce) {
 
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
+    animation: none !important;
 
-    animation-iteration-count: 1 !important;
+    transition: none !important;
 
-    transition
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+
+    transform: none;
+  }
+
+}
