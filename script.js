@@ -1,124 +1,261 @@
-/* =================================
+/* =====================================================
    ADIX MEHRA PORTFOLIO
-   MAIN JAVASCRIPT
-================================= */
+   JavaScript
+===================================================== */
 
-/* ================================
-   MOBILE MENU
-================================ */
+document.addEventListener("DOMContentLoaded", () => {
 
-const menu = document.querySelector(".menu");
-const links = document.querySelector(".nav-links");
+  /* ===================================================
+     MOBILE MENU
+  =================================================== */
 
-if (menu && links) {
+  const menu = document.querySelector(".menu");
+  const links = document.querySelector(".nav-links");
 
-  menu.addEventListener("click", () => {
+  if (menu && links) {
 
-    const open = links.classList.toggle("active");
+    menu.addEventListener("click", () => {
 
-    menu.setAttribute("aria-expanded", open);
+      const isOpen =
+        links.classList.toggle("active");
 
-    menu.setAttribute(
-      "aria-label",
-      open ? "Close menu" : "Open menu"
+      menu.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+
+      menu.setAttribute(
+        "aria-label",
+        isOpen
+          ? "Close menu"
+          : "Open menu"
+      );
+
+      menu.textContent =
+        isOpen ? "✕" : "☰";
+
+    });
+
+
+    /* Close menu after clicking a link */
+
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach((link) => {
+
+        link.addEventListener("click", () => {
+
+          links.classList.remove("active");
+
+          menu.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          menu.setAttribute(
+            "aria-label",
+            "Open menu"
+          );
+
+          menu.textContent = "☰";
+
+        });
+
+      });
+
+
+    /* Close menu when clicking outside */
+
+    document.addEventListener(
+      "click",
+      (event) => {
+
+        const clickedInsideMenu =
+          menu.contains(event.target) ||
+          links.contains(event.target);
+
+        if (!clickedInsideMenu) {
+
+          links.classList.remove("active");
+
+          menu.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          menu.setAttribute(
+            "aria-label",
+            "Open menu"
+          );
+
+          menu.textContent = "☰";
+
+        }
+
+      }
     );
 
-  });
+  }
 
 
-  /* Close menu when a link is clicked */
+  /* ===================================================
+     SCROLL REVEAL
+  =================================================== */
 
-  document.querySelectorAll(".nav-links a").forEach((link) => {
+  const revealElements =
+    document.querySelectorAll(".reveal");
 
-    link.addEventListener("click", () => {
+
+  if ("IntersectionObserver" in window) {
+
+    const observer =
+      new IntersectionObserver(
+        (entries, obs) => {
+
+          entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add(
+                "visible"
+              );
+
+              obs.unobserve(
+                entry.target
+              );
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+
+    revealElements.forEach((element) => {
+
+      observer.observe(element);
+
+    });
+
+  } else {
+
+    /* Fallback for old browsers */
+
+    revealElements.forEach((element) => {
+
+      element.classList.add("visible");
+
+    });
+
+  }
+
+
+  /* ===================================================
+     SMOOTH SCROLL
+  =================================================== */
+
+  document
+    .querySelectorAll('a[href^="#"]')
+    .forEach((anchor) => {
+
+      anchor.addEventListener(
+        "click",
+        (event) => {
+
+          const targetId =
+            anchor.getAttribute("href");
+
+          if (
+            !targetId ||
+            targetId === "#"
+          ) {
+            return;
+          }
+
+          const target =
+            document.querySelector(
+              targetId
+            );
+
+          if (!target) {
+            return;
+          }
+
+          event.preventDefault();
+
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }
+      );
+
+    });
+
+
+  /* ===================================================
+     ESC KEY — CLOSE MOBILE MENU
+  =================================================== */
+
+  document.addEventListener(
+    "keydown",
+    (event) => {
+
+      if (event.key !== "Escape") {
+        return;
+      }
+
+      if (!menu || !links) {
+        return;
+      }
 
       links.classList.remove("active");
 
-      menu.setAttribute("aria-expanded", "false");
+      menu.setAttribute(
+        "aria-expanded",
+        "false"
+      );
 
       menu.setAttribute(
         "aria-label",
         "Open menu"
       );
 
-    });
+      menu.textContent = "☰";
 
-  });
-
-}
-
-
-/* ================================
-   SCROLL REVEAL
-================================= */
-
-const revealElements = document.querySelectorAll(".reveal");
-
-if (revealElements.length > 0) {
-
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-
-      entries.forEach((entry) => {
-
-        if (entry.isIntersecting) {
-
-          entry.target.classList.add("visible");
-
-          revealObserver.unobserve(entry.target);
-
-        }
-
-      });
-
-    },
-    {
-      threshold: 0.15
     }
   );
 
 
-  revealElements.forEach((element) => {
+  /* ===================================================
+     IMAGE ERROR HANDLING
+  =================================================== */
 
-    revealObserver.observe(element);
+  document
+    .querySelectorAll("img")
+    .forEach((image) => {
 
-  });
+      image.addEventListener(
+        "error",
+        () => {
 
-}
+          image.classList.add(
+            "image-error"
+          );
 
+          console.warn(
+            "Image could not be loaded:",
+            image.src
+          );
 
-/* ================================
-   CURRENT YEAR
-================================= */
+        }
+      );
 
-const yearElement = document.querySelector("footer span");
-
-if (yearElement) {
-
-  yearElement.textContent =
-    `© ${new Date().getFullYear()} Adix Mehra`;
-
-}
-
-
-/* ================================
-   ESC KEY
-   CLOSE MOBILE MENU
-================================= */
-
-document.addEventListener("keydown", (event) => {
-
-  if (event.key === "Escape" && menu && links) {
-
-    links.classList.remove("active");
-
-    menu.setAttribute("aria-expanded", "false");
-
-    menu.setAttribute(
-      "aria-label",
-      "Open menu"
-    );
-
-  }
+    });
 
 });
