@@ -1,1085 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="description"
-    content="Adix Mehra — Creative Developer creating modern websites and social media designs."
-  >
-
-  <meta name="author" content="Adix Mehra">
-
-  <meta
-    name="theme-color"
-    content="#f5f3ee"
-  >
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Creative developer portfolio." />
   <title>Adix Mehra — Creative Developer</title>
 
-  <!-- ================= FONTS ================= -->
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
-
-  <!-- ================= CSS ================= -->
-
-  <link
-    rel="stylesheet"
-    href="./style.css"
-  >
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 
 <body>
 
-
-  <!-- =================================================
-       PRELOADER
-  ================================================== -->
-
+  <!-- ================= LOADER ================= -->
   <div class="loader" id="loader">
-
-    <div class="loader-inner">
-
-      <div class="loader-name">
-        Adix Mehra
-      </div>
-
+    <div class="loader-content">
+      <div class="loader-logo">AM<span>.</span></div>
       <div class="loader-line">
-        <span></span>
+        <span id="loaderProgress"></span>
       </div>
-
-      <div class="loader-percent">
-        <span id="loaderPercent">0</span>%
-      </div>
-
+      <p>INITIALIZING EXPERIENCE <span id="loaderNumber">0</span>%</p>
     </div>
-
   </div>
 
-
-
-  <!-- =================================================
-       CUSTOM CURSOR
-  ================================================== -->
-
-  <div class="cursor" id="cursor"></div>
-
-  <div class="cursor-ring" id="cursorRing"></div>
-
-
-
-  <!-- =================================================
-       NOISE
-  ================================================== -->
-
+  <!-- Background -->
   <div class="noise"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
 
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <a href="#home" class="brand">AM<span>.</span></a>
 
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+      <span></span>
+      <span></span>
+    </button>
 
-  <!-- =================================================
-       HEADER
-  ================================================== -->
-
-  <header class="header" id="header">
-
-    <nav class="nav container">
-
-      <a
-        href="#home"
-        class="logo magnetic"
-        data-cursor="link"
-      >
-        Adix Mehra
-      </a>
-
-
-      <button
-        class="menu-button"
-        id="menuButton"
-        aria-label="Open menu"
-        aria-expanded="false"
-      >
-
-        <span></span>
-        <span></span>
-
-      </button>
-
-
-      <div class="nav-links" id="navLinks">
-
-        <a
-          href="#home"
-          class="nav-link"
-        >
-          Home
-        </a>
-
-        <a
-          href="#about"
-          class="nav-link"
-        >
-          About
-        </a>
-
-        <a
-          href="#services"
-          class="nav-link"
-        >
-          Services
-        </a>
-
-        <a
-          href="#work"
-          class="nav-link"
-        >
-          Work
-        </a>
-
-        <a
-          href="#contact"
-          class="nav-link"
-        >
-          Contact
-        </a>
-
-      </div>
-
+    <nav id="navMenu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#contact" class="nav-contact">Let's Talk <span>↗</span></a>
     </nav>
-
   </header>
-
-
-
-  <!-- =================================================
-       MAIN
-  ================================================== -->
 
   <main>
 
-
-    <!-- =================================================
-         HERO
-    ================================================== -->
-
-    <section
-      class="hero"
-      id="home"
-    >
+    <!-- ================= HERO ================= -->
+    <section class="hero section" id="home">
 
       <div class="hero-grid"></div>
 
-      <div class="hero-orb orb-one"></div>
-      <div class="hero-orb orb-two"></div>
+      <div class="hero-content reveal">
+        <div class="eyebrow">
+          <span class="status-dot"></span>
+          AVAILABLE FOR CREATIVE WORK
+        </div>
 
+        <h1>
+          Creative
+          <span>Developer</span>
+          <em>&amp; Digital</em>
+          <strong>Creator.</strong>
+        </h1>
 
-      <div class="container hero-container">
+        <p class="hero-description">
+          I create modern digital experiences that combine thoughtful
+          design, clean development and smooth interactions.
+        </p>
 
+        <div class="hero-buttons">
+          <a href="#work" class="btn btn-primary">
+            View My Work <span>↗</span>
+          </a>
 
-        <div class="hero-left">
+          <a href="#contact" class="btn btn-outline">
+            Let's Connect
+          </a>
+        </div>
+      </div>
 
+      <div class="hero-orbit">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="orbit-core">
+          <span>AM</span>
+        </div>
+      </div>
 
-          <div
-            class="availability reveal-up"
-            data-delay="300"
-          >
+      <div class="scroll-indicator">
+        <span>SCROLL</span>
+        <div></div>
+      </div>
+    </section>
 
-            <span class="availability-dot"></span>
+    <!-- ================= ABOUT ================= -->
+    <section class="section about" id="about">
 
-            Available for creative projects
+      <div class="section-heading reveal">
+        <span class="section-number">01</span>
+        <div>
+          <p class="section-label">WHO I AM</p>
+          <h2>About <span>Me.</span></h2>
+        </div>
+      </div>
 
-          </div>
+      <div class="about-layout">
 
-
-          <h1 class="hero-title">
-
-            <span class="hero-line">
-              <span>Adix</span>
-            </span>
-
-            <span class="hero-line">
-              <span>Mehra.</span>
-            </span>
-
-            <span class="hero-line hero-accent">
-              <span>Creative Developer.</span>
-            </span>
-
-          </h1>
-
-
-          <p
-            class="hero-description reveal-up"
-            data-delay="900"
-          >
-
-            I design and build clean, modern digital experiences
-            where creativity meets technology.
-
+        <div class="about-text reveal">
+          <p class="large-text">
+            Turning ideas into <span>digital experiences</span>
+            that feel as good as they look.
           </p>
 
-
-          <div
-            class="hero-buttons reveal-up"
-            data-delay="1100"
-          >
-
-            <a
-              href="#work"
-              class="button button-dark magnetic"
-              data-cursor="button"
-            >
-
-              <span>Explore my work</span>
-
-              <span class="button-arrow">↗</span>
-
-            </a>
-
-
-            <a
-              href="#contact"
-              class="under-link"
-              data-cursor="link"
-            >
-
-              Let's talk
-
-              <span>→</span>
-
-            </a>
-
-          </div>
-
-
-        </div>
-
-
-
-        <!-- HERO IMAGE -->
-
-        <div
-          class="hero-visual reveal-scale"
-          data-delay="600"
-        >
-
-          <div
-            class="hero-image-wrap"
-            id="heroImage"
-          >
-
-            <img
-              src="./assets/adix-profile.jpg"
-              alt="Adix Mehra"
-              class="hero-image"
-            >
-
-            <div class="hero-image-overlay"></div>
-
-          </div>
-
-
-          <div class="floating-card card-top">
-
-            <span>01</span>
-
-            <strong>Creative</strong>
-
-          </div>
-
-
-          <div class="floating-card card-bottom">
-
-            <span>Based on</span>
-
-            <strong>Ideas × Code</strong>
-
-          </div>
-
-
-          <div class="hero-image-caption">
-
-            <span>Scroll to explore</span>
-
-            <span class="scroll-line"></span>
-
-          </div>
-
-        </div>
-
-
-      </div>
-
-
-      <div class="hero-bottom">
-
-        <div class="container hero-bottom-inner">
-
-          <span>WEB DESIGN</span>
-
-          <span>DEVELOPMENT</span>
-
-          <span>SOCIAL MEDIA</span>
-
-          <span>CREATIVE DIRECTION</span>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =================================================
-         INTRO
-    ================================================== -->
-
-    <section class="intro section">
-
-      <div class="container">
-
-
-        <div class="section-label reveal-up">
-
-          <span>01</span>
-
-          <span>THE APPROACH</span>
-
-        </div>
-
-
-        <div class="intro-text">
-
-          <p class="reveal-text">
-
-            I believe good digital experiences should feel
-
-            <em>simple, intentional</em>
-
-            and
-
-            <em>alive.</em>
-
+          <p>
+            I focus on creating websites and digital experiences
+            with a strong visual identity, intuitive interaction and
+            modern technology.
           </p>
 
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =================================================
-         ABOUT
-    ================================================== -->
-
-    <section
-      class="about section"
-      id="about"
-    >
-
-      <div class="container">
-
-
-        <div class="section-header">
-
-          <div class="section-label reveal-up">
-
-            <span>02</span>
-
-            <span>ABOUT ME</span>
-
-          </div>
-
-
-          <h2 class="section-title reveal-up">
-
-            A little about
-
-            <em>Adix.</em>
-
-          </h2>
-
-        </div>
-
-
-
-        <div class="about-grid">
-
-
-          <div class="about-photo reveal-left">
-
-            <div class="photo-frame">
-
-              <img
-                src="./assets/adix-road.jpg"
-                alt="Adix Mehra"
-                loading="lazy"
-              >
-
-              <div class="photo-number">
-                02 / 05
-              </div>
-
-            </div>
-
-          </div>
-
-
-
-          <div class="about-content reveal-right">
-
-
-            <p class="about-big">
-
-              I'm a creative developer who enjoys turning
-              ideas into digital experiences.
-
-            </p>
-
-
-            <p>
-
-              My interests sit between design and technology.
-              I like clean layouts, thoughtful interactions,
-              strong visuals and websites that feel good to use.
-
-            </p>
-
-
-            <p>
-
-              I'm constantly learning, experimenting and building.
-              This portfolio is a living collection of that journey.
-
-            </p>
-
-
-            <div class="about-tags">
-
-              <span>Web Design</span>
-
-              <span>Development</span>
-
-              <span>Social Media</span>
-
-              <span>Creative</span>
-
-            </div>
-
-
-            <a
-              href="#contact"
-              class="circle-link magnetic"
-              data-cursor="button"
-            >
-
-              <span>Let's work<br>together</span>
-
-              <span class="circle-arrow">↗</span>
-
-            </a>
-
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =================================================
-         SERVICES
-    ================================================== -->
-
-    <section
-      class="services section"
-      id="services"
-    >
-
-      <div class="container">
-
-
-        <div class="section-header services-header">
-
-          <div class="section-label light reveal-up">
-
-            <span>03</span>
-
-            <span>WHAT I DO</span>
-
-          </div>
-
-
-          <h2 class="section-title light reveal-up">
-
-            Built with purpose,
-
-            <em>not noise.</em>
-
-          </h2>
-
-        </div>
-
-
-
-        <div class="services-list">
-
-
-          <!-- SERVICE 01 -->
-
-          <article
-            class="service-item reveal-up"
-            data-service="01"
-          >
-
-            <div class="service-index">
-              01
-            </div>
-
-
-            <div class="service-content">
-
-              <h3>
-                Web Design
-                <span>& Development</span>
-              </h3>
-
-              <p>
-
-                Modern, responsive websites designed around
-                clarity, usability and visual impact.
-
-              </p>
-
-            </div>
-
-
-            <div class="service-icon">
-
-              <span>↗</span>
-
-            </div>
-
-
-            <div class="service-hover-number">
-              01
-            </div>
-
-          </article>
-
-
-
-          <!-- SERVICE 02 -->
-
-          <article
-            class="service-item reveal-up"
-            data-service="02"
-          >
-
-            <div class="service-index">
-              02
-            </div>
-
-
-            <div class="service-content">
-
-              <h3>
-                Social Media
-                <span>Design</span>
-              </h3>
-
-              <p>
-
-                Clean and engaging visual content that gives
-                your social presence a stronger identity.
-
-              </p>
-
-            </div>
-
-
-            <div class="service-icon">
-
-              <span>↗</span>
-
-            </div>
-
-
-            <div class="service-hover-number">
-              02
-            </div>
-
-          </article>
-
-
-        </div>
-
-
-
-        <div class="services-footer reveal-up">
-
-          <span>
-            Design × Development × Creativity
-          </span>
-
-          <span>
-            Let's create something meaningful.
-          </span>
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =================================================
-         SKILLS
-    ================================================== -->
-
-    <section class="skills section">
-
-      <div class="container">
-
-
-        <div class="section-label reveal-up">
-
-          <span>04</span>
-
-          <span>CAPABILITIES</span>
-
-        </div>
-
-
-        <div class="skills-heading">
-
-          <h2 class="reveal-up">
-
-            Tools for turning
-
-            <em>ideas into reality.</em>
-
-          </h2>
-
-        </div>
-
-
-        <div class="skills-marquee">
-
-          <div class="skills-track">
-
-            <span>HTML</span>
-            <i>✦</i>
-
-            <span>CSS</span>
-            <i>✦</i>
-
-            <span>JAVASCRIPT</span>
-            <i>✦</i>
-
-            <span>WEB DESIGN</span>
-            <i>✦</i>
-
-            <span>RESPONSIVE DESIGN</span>
-            <i>✦</i>
-
-            <span>SOCIAL MEDIA</span>
-            <i>✦</i>
-
-            <span>CANVA</span>
-            <i>✦</i>
-
-          </div>
-
-        </div>
-
-
-        <div class="skill-grid reveal-up">
-
-          <div class="skill-box">
-            <span>01</span>
-            <strong>HTML</strong>
-          </div>
-
-          <div class="skill-box">
-            <span>02</span>
-            <strong>CSS</strong>
-          </div>
-
-          <div class="skill-box">
-            <span>03</span>
-            <strong>JavaScript</strong>
-          </div>
-
-          <div class="skill-box">
-            <span>04</span>
-            <strong>Web Design</strong>
-          </div>
-
-          <div class="skill-box">
-            <span>05</span>
-            <strong>Responsive Design</strong>
-          </div>
-
-          <div class="skill-box">
-            <span>06</span>
-            <strong>Social Media Design</strong>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =================================================
-         WORK
-    ================================================== -->
-
-    <section
-      class="work section"
-      id="work"
-    >
-
-      <div class="container">
-
-
-        <div class="section-header">
-
-          <div class="section-label reveal-up">
-
-            <span>05</span>
-
-            <span>SELECTED WORK</span>
-
-          </div>
-
-
-          <h2 class="section-title reveal-up">
-
-            The best is
-
-            <em>coming.</em>
-
-          </h2>
-
-        </div>
-
-
-
-        <div class="work-card reveal-scale">
-
-
-          <div class="work-background"></div>
-
-
-          <div class="work-grid-pattern"></div>
-
-
-          <div class="work-number">
-            02
-          </div>
-
-
-          <div class="work-status">
-
-            <span></span>
-
-            PORTFOLIO IN PROGRESS
-
-          </div>
-
-
-          <div class="work-content">
-
-            <p class="work-eyebrow">
-              BUILDING IN PUBLIC
-            </p>
-
-
-            <h3>
-
-              Real projects.
-
-              <br>
-
-              <span>Coming soon.</span>
-
-            </h3>
-
-
-            <p>
-
-              I'm currently building and documenting a collection
-              of web and creative projects. New work will appear
-              here as it becomes ready.
-
-            </p>
-
-
-            <a
-              href="#contact"
-              class="button button-dark magnetic"
-              data-cursor="button"
-            >
-
-              Start a project
-
-              <span>↗</span>
-
-            </a>
-
-          </div>
-
-
-          <div class="work-orbit orbit-one"></div>
-
-          <div class="work-orbit orbit-two"></div>
-
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =================================================
-         PERSONAL PHOTO STRIP
-    ================================================== -->
-
-    <section class="photo-strip">
-
-      <div class="photo-strip-track">
-
-        <div class="strip-image">
-          <img
-            src="./assets/adix-bike.jpg"
-            alt="Adix Mehra"
-            loading="lazy"
-          >
-        </div>
-
-        <div class="strip-image">
-          <img
-            src="./assets/adix-bike-2.jpg"
-            alt="Adix Mehra"
-            loading="lazy"
-          >
-        </div>
-
-        <div class="strip-image">
-          <img
-            src="./assets/adix-road.jpg"
-            alt="Adix Mehra"
-            loading="lazy"
-          >
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =================================================
-         CONTACT
-    ================================================== -->
-
-    <section
-      class="contact section"
-      id="contact"
-    >
-
-      <div class="container">
-
-
-        <div class="contact-top reveal-up">
-
-          <div class="section-label light">
-
-            <span>06</span>
-
-            <span>CONTACT</span>
-
-          </div>
-
-        </div>
-
-
-        <div class="contact-main">
-
-
-          <h2 class="contact-title reveal-up">
-
-            Have an idea?
-
-            <br>
-
-            <em>Let's build it.</em>
-
-          </h2>
-
-
-          <p class="contact-description reveal-up">
-
-            Have a website idea, social media project or
-            something completely different? Let's talk.
-
+          <p>
+            Every project starts with understanding the idea,
+            transforming it into a clear visual direction and then
+            bringing it to life with clean code.
           </p>
 
+          <a href="#contact" class="text-link">
+            Let's work together <span>↗</span>
+          </a>
+        </div>
 
-          <div class="contact-actions reveal-up">
+        <div class="about-card glass-card reveal tilt-card">
+          <div class="card-number">01</div>
+          <div class="about-symbol">
+            <span>✦</span>
+          </div>
+          <h3>Designing<br><span>the future.</span></h3>
+          <div class="card-footer">
+            <span>CREATIVE / CODE</span>
+            <span>2026</span>
+          </div>
+        </div>
 
+      </div>
+    </section>
 
-            <a
-              href="mailto:angaming472@gmail.com"
-              class="contact-button magnetic"
-              data-cursor="button"
-            >
+    <!-- ================= SERVICES ================= -->
+    <section class="section services" id="services">
 
-              <span>Email me</span>
+      <div class="section-heading reveal">
+        <span class="section-number">02</span>
+        <div>
+          <p class="section-label">WHAT I DO</p>
+          <h2>My <span>Services.</span></h2>
+        </div>
+      </div>
 
-              <span>↗</span>
+      <div class="services-grid">
 
-            </a>
+        <article class="service-card glass-card reveal tilt-card">
+          <span class="service-number">01</span>
+          <div class="service-icon">◈</div>
+          <h3>Web Design</h3>
+          <p>
+            Modern, visually engaging interfaces designed around
+            clarity, personality and user experience.
+          </p>
+          <span class="service-arrow">↗</span>
+        </article>
 
+        <article class="service-card glass-card reveal tilt-card">
+          <span class="service-number">02</span>
+          <div class="service-icon">⌘</div>
+          <h3>Web Development</h3>
+          <p>
+            Fast and responsive websites built with clean,
+            maintainable front-end code.
+          </p>
+          <span class="service-arrow">↗</span>
+        </article>
 
-            <a
-              href="https://www.instagram.com/adixmehra/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="contact-button secondary magnetic"
-              data-cursor="button"
-            >
+        <article class="service-card glass-card reveal tilt-card">
+          <span class="service-number">03</span>
+          <div class="service-icon">✦</div>
+          <h3>Creative Experiences</h3>
+          <p>
+            Interactive animations, transitions and details that
+            make digital experiences memorable.
+          </p>
+          <span class="service-arrow">↗</span>
+        </article>
 
-              <span>Instagram</span>
+        <article class="service-card service-highlight reveal">
+          <div>
+            <span class="mini-label">LET'S CREATE</span>
+            <h3>Something<br>different.</h3>
+          </div>
+          <a href="#contact">Start a project ↗</a>
+        </article>
 
-              <span>↗</span>
+      </div>
+    </section>
 
-            </a>
+    <!-- ================= WORK ================= -->
+    <section class="section work" id="work">
 
+      <div class="section-heading reveal">
+        <span class="section-number">03</span>
+        <div>
+          <p class="section-label">SELECTED PROJECTS</p>
+          <h2>Featured <span>Work.</span></h2>
+        </div>
+      </div>
 
+      <div class="projects">
+
+        <article class="project reveal">
+          <div class="project-visual project-one">
+            <span class="project-tag">01 / WEB</span>
+            <div class="project-shape">
+              <span>PROJECT<br>01</span>
+            </div>
           </div>
 
+          <div class="project-info">
+            <div>
+              <h3>Digital Experience</h3>
+              <p>Creative website / Interface</p>
+            </div>
+            <a href="#" aria-label="View project">↗</a>
+          </div>
+        </article>
 
-        </div>
+        <article class="project reveal">
+          <div class="project-visual project-two">
+            <span class="project-tag">02 / CREATIVE</span>
+            <div class="project-shape">
+              <span>PROJECT<br>02</span>
+            </div>
+          </div>
 
+          <div class="project-info">
+            <div>
+              <h3>Creative Platform</h3>
+              <p>Design / Development</p>
+            </div>
+            <a href="#" aria-label="View project">↗</a>
+          </div>
+        </article>
 
-        <div class="contact-bottom reveal-up">
+        <article class="project reveal">
+          <div class="project-visual project-three">
+            <span class="project-tag">03 / BRAND</span>
+            <div class="project-shape">
+              <span>PROJECT<br>03</span>
+            </div>
+          </div>
 
-          <span>
-            angaming472@gmail.com
-          </span>
+          <div class="project-info">
+            <div>
+              <h3>Visual Identity</h3>
+              <p>Brand / Digital</p>
+            </div>
+            <a href="#" aria-label="View project">↗</a>
+          </div>
+        </article>
 
-          <span>
-            India
-          </span>
+      </div>
+    </section>
 
-        </div>
+    <!-- ================= CONTACT ================= -->
+    <section class="section contact" id="contact">
 
+      <div class="contact-box reveal">
+        <span class="section-label">04 / GET IN TOUCH</span>
 
+        <h2>
+          Have an idea?
+          <span>Let's build it.</span>
+        </h2>
+
+        <p>
+          Have a project, collaboration or just an interesting idea?
+          Drop me a message.
+        </p>
+
+        <a href="mailto:your@email.com" class="btn btn-primary contact-button">
+          Start a Conversation <span>↗</span>
+        </a>
       </div>
 
     </section>
-
 
   </main>
 
-
-
-  <!-- =================================================
-       FOOTER
-  ================================================== -->
-
+  <!-- ================= FOOTER ================= -->
   <footer>
+    <div class="footer-brand">AM<span>.</span></div>
 
-    <div class="container footer-inner">
+    <p>© 2026 — All rights reserved.</p>
 
-
-      <div class="footer-brand">
-
-        <a href="#home">
-          Adix Mehra
-        </a>
-
-        <span>
-          Creative Developer
-        </span>
-
-      </div>
-
-
-      <div class="footer-links">
-
-        <a href="#about">About</a>
-
-        <a href="#services">Services</a>
-
-        <a href="#work">Work</a>
-
-        <a href="#contact">Contact</a>
-
-      </div>
-
-
-      <a
-        href="#home"
-        class="back-top"
-      >
-        Back to top ↑
-      </a>
-
-
-      <div class="footer-copy">
-
-        © 2026 Adix Mehra
-
-      </div>
-
-
+    <div class="footer-links">
+      <a href="#home">Back to top ↑</a>
     </div>
-
   </footer>
 
-
-
-  <!-- =================================================
-       JAVASCRIPT
-  ================================================== -->
-
-  <script src="./script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
