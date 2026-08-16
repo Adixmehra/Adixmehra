@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Adix Mehra — Selected Projects">
+
+  <meta name="theme-color" content="#08080b">
+
+  <title>Projects | Adix Mehra</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="./style.css">
+
+  <style>
+
+    .projects-page {
+      min-height: 100vh;
+      padding: 90px 0 100px;
+    }
+
+    .projects-heading {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 60px;
+    }
+
+    .projects-heading small {
+      display: block;
+      margin-bottom: 15px;
+      color: #907bff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+
+    .projects-heading h1 {
+      margin: 0;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(45px, 8vw, 80px);
+      line-height: 1;
+      letter-spacing: -3px;
+    }
+
+    .projects-heading h1 span {
+      color: #907bff;
+    }
+
+    .projects-heading p {
+      margin: 20px auto 0;
+      max-width: 620px;
+      color: #a9a9b3;
+      line-height: 1.7;
+    }
+
+    .back-button {
+      display: inline-flex;
+      margin-bottom: 45px;
+      padding: 12px 18px;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 12px;
+      background: rgba(255,255,255,.04);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      transition: .25s ease;
+    }
+
+    .back-button:hover {
+      color: #fff;
+      border-color: rgba(144,123,255,.6);
+      background: rgba(144,123,255,.08);
+      transform: translateY(-2px);
+    }
+
+    .project-detail {
+      overflow: hidden;
+      margin-bottom: 55px;
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 28px;
+      background: rgba(255,255,255,.025);
+      box-shadow: 0 25px 70px rgba(0,0,0,.25);
+    }
+
+    .project-detail-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 650px;
+      object-fit: cover;
+    }
+
+    .project-detail-content {
+      padding: 30px;
+    }
+
+    .project-detail-content small {
+      color: #907bff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .project-detail-content h2 {
+      margin: 12px 0 0;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(30px, 5vw, 55px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+    }
+
+    .project-detail-content p {
+      max-width: 750px;
+      margin-top: 18px;
+      color: #a9a9b3;
+      line-height: 1.8;
+    }
+
+    .project-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .project-info-box {
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 15px;
+      background: rgba(255,255,255,.025);
+    }
+
+    .project-info-box small {
+      display: block;
+      color: #777783;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+    }
+
+    .project-info-box strong {
+      display: block;
+      margin-top: 7px;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+
+      .projects-page {
+        padding: 65px 0 80px;
+      }
+
+      .projects-heading {
+        margin-bottom: 45px;
+      }
+
+      .projects-heading h1 {
+        letter-spacing: -2px;
+      }
+
+      .project-detail {
+        border-radius: 22px;
+      }
+
+      .project-detail-image {
+        max-height: none;
+      }
+
+      .project-detail-content {
+        padding: 24px;
+      }
+
+      .project-info {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+  <nav class="nav container">
+
+    <a class="logo" href="index.html">
+      <span>A</span>DIX MEHRA
+    </a>
+
+    <button
+      class="menu"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
+    <div class="nav-links">
+
+      <a href="index.html#home">Home</a>
+
+      <a href="index.html#about">About</a>
+
+      <a href="index.html#skills">Skills</a>
+
+      <a href="projects.html">Projects</a>
+
+      <a href="index.html#services">Services</a>
+
+      <a href="index.html#contact">Contact</a>
+
+    </div>
+
+  </nav>
+
+</header>
+
+
+<main class="projects-page container">
+
+
+  <a
+    class="back-button"
+    href="index.html#projects"
+  >
+    ← Back to Portfolio
+  </a>
+
+
+  <div class="projects-heading">
+
+    <small>
+      03 / SELECTED WORK
+    </small>
+
+    <h1>
+      My <span>Projects.</span>
+    </h1>
+
+    <p>
+      A collection of websites, creative visuals
+      and digital projects created by Adix Mehra.
+    </p>
+
+  </div>
+
+
+  <!-- PROJECT 01 -->
+
+  <article
+    class="project-detail"
+    id="baglamukhi-prasad-point"
+  >
+
+    <img
+      class="project-detail-image"
+      src="assets/file_000000003bf0820b8e4f4fdd9dcddb10.png"
+      alt="Baglamukhi Prasad Point Kotla Website"
+    >
+
+    <div class="project-detail-content">
+
+      <small>
+        WEB DESIGN / CLIENT PROJECT
+      </small>
+
+      <h2>
+        Baglamukhi Prasad Point Kotla
+      </h2>
+
+      <p>
+        A modern responsive website concept designed
+        for Baglamukhi Prasad Point Kotla. The project
+        focuses on strong visual identity, clean layout,
+        responsive design and an easy user experience.
+      </p>
+
+      <div class="project-info">
+
+        <div class="project-info-box">
+          <small>CATEGORY</small>
+          <strong>Web Design</strong>
+        </div>
+
+        <div class="project-info-box">
+          <small>TYPE</small>
+          <strong>Business Website</strong>
+        </div>
+
+        <div class="project-info-box">
+          <small>STATUS</small>
+          <strong>Completed Concept</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- PROJECT 02 -->
+
+  <article
+    class="project-detail"
+    id="personal-visuals"
+  >
+
+    <img
+      class="project-detail-image"
+      src="assets/adix-road.jpg"
+      alt="Adix Mehra Personal Visual"
+    >
+
+    <div class="project-detail-content">
+
+      <small>
+        PERSONAL / CREATIVE
+      </small>
+
+      <h2>
+        Personal Visuals
+      </h2>
+
+      <p>
+        A collection of personal photography and
+        creative visual experiments exploring
+        composition, atmosphere and visual storytelling.
+      </p>
+
+      <div class="project-info">
+
+        <div class="project-info-box">
+          <small>CATEGORY</small>
+          <strong>Photography</strong>
+        </div>
+
+        <div class="project-info-box">
+          <small>TYPE</small>
+          <strong>Personal Project</strong>
+        </div>
+
+        <div class="project-info-box">
+          <small>FOCUS</small>
+          <strong>Visual Storytelling</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- PROJECT 03 -->
+
+  <article
+    class="project-detail"
+    id="professional-website"
+  >
+
+    <img
+      class="project-detail-image"
+      src="assets/adix-bike-2.jpg"
+      alt="Professional Website Project"
+    >
+
+    <div class="project-detail-content">
+
+      <small>
+        WEB DESIGN
+      </small>
+
+      <h2>
+        Professional Website
+      </h2>
+
+      <p>
+        A modern responsive website concept focused
+        on clarity, visual hierarchy and mobile-first
+        design.
+      </p>
+
+      <div class="project-info">
+
+        <div class="project-info-box">
+          <small>CATEGORY</small>
+          <strong>Web Design</strong>
+        </div>
+
+        <div class="project-info-box">
+          <small>TYPE</small>
+          <strong>Portfolio Concept</strong>
+        </div>
+
+        <div class="project-info-box">
+          <small>FOCUS</small>
+          <strong>Responsive Design</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+</main>
+
+
+<footer>
+
+  <div class="container">
+
+    <span>
+      © 2026 Adix Mehra
+    </span>
+
+    <a href="index.html">
+      Back to Portfolio ↑
+    </a>
+
+  </div>
+
+</footer>
+
+
+<script src="./script.js"></script>
+
+</body>
+
+</html>
