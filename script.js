@@ -1,6 +1,6 @@
 /* =====================================================
    ADIX MEHRA PORTFOLIO
-   JavaScript
+   Professional Scroll Animation
 ===================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -16,8 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     menu.addEventListener("click", () => {
 
-      const isOpen =
-        links.classList.toggle("active");
+      const isOpen = links.classList.toggle("active");
 
       menu.setAttribute(
         "aria-expanded",
@@ -26,18 +25,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
       menu.setAttribute(
         "aria-label",
-        isOpen
-          ? "Close menu"
-          : "Open menu"
+        isOpen ? "Close menu" : "Open menu"
       );
 
-      menu.textContent =
-        isOpen ? "✕" : "☰";
+      menu.textContent = isOpen ? "✕" : "☰";
 
     });
 
-
-    /* Close menu after clicking a link */
 
     document
       .querySelectorAll(".nav-links a")
@@ -64,47 +58,41 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
 
-    /* Close menu when clicking outside */
+    document.addEventListener("click", (event) => {
 
-    document.addEventListener(
-      "click",
-      (event) => {
+      const clickedInside =
+        menu.contains(event.target) ||
+        links.contains(event.target);
 
-        const clickedInsideMenu =
-          menu.contains(event.target) ||
-          links.contains(event.target);
+      if (!clickedInside) {
 
-        if (!clickedInsideMenu) {
+        links.classList.remove("active");
 
-          links.classList.remove("active");
+        menu.setAttribute(
+          "aria-expanded",
+          "false"
+        );
 
-          menu.setAttribute(
-            "aria-expanded",
-            "false"
-          );
+        menu.setAttribute(
+          "aria-label",
+          "Open menu"
+        );
 
-          menu.setAttribute(
-            "aria-label",
-            "Open menu"
-          );
-
-          menu.textContent = "☰";
-
-        }
+        menu.textContent = "☰";
 
       }
-    );
+
+    });
 
   }
 
 
   /* ===================================================
-     SCROLL REVEAL
+     PROFESSIONAL SCROLL REVEAL
   =================================================== */
 
   const revealElements =
     document.querySelectorAll(".reveal");
-
 
   if ("IntersectionObserver" in window) {
 
@@ -116,13 +104,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (entry.isIntersecting) {
 
-              entry.target.classList.add(
-                "visible"
-              );
+              entry.target.classList.add("visible");
 
-              obs.unobserve(
-                entry.target
-              );
+              obs.unobserve(entry.target);
 
             }
 
@@ -130,106 +114,93 @@ document.addEventListener("DOMContentLoaded", () => {
 
         },
         {
-          threshold: 0.12
+          threshold: 0.16,
+          rootMargin: "0px 0px -8% 0px"
         }
       );
 
 
     revealElements.forEach((element) => {
-
       observer.observe(element);
-
     });
 
   } else {
 
-    /* Fallback for old browsers */
-
     revealElements.forEach((element) => {
-
       element.classList.add("visible");
-
     });
 
   }
 
 
   /* ===================================================
-     SMOOTH SCROLL
+     SMOOTH ANCHOR SCROLL
   =================================================== */
 
   document
     .querySelectorAll('a[href^="#"]')
     .forEach((anchor) => {
 
-      anchor.addEventListener(
-        "click",
-        (event) => {
+      anchor.addEventListener("click", (event) => {
 
-          const targetId =
-            anchor.getAttribute("href");
+        const targetId =
+          anchor.getAttribute("href");
 
-          if (
-            !targetId ||
-            targetId === "#"
-          ) {
-            return;
-          }
-
-          const target =
-            document.querySelector(
-              targetId
-            );
-
-          if (!target) {
-            return;
-          }
-
-          event.preventDefault();
-
-          target.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          });
-
+        if (
+          !targetId ||
+          targetId === "#"
+        ) {
+          return;
         }
-      );
+
+        const target =
+          document.querySelector(targetId);
+
+        if (!target) {
+          return;
+        }
+
+        event.preventDefault();
+
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      });
 
     });
 
 
   /* ===================================================
-     ESC KEY — CLOSE MOBILE MENU
+     ESC KEY
   =================================================== */
 
-  document.addEventListener(
-    "keydown",
-    (event) => {
+  document.addEventListener("keydown", (event) => {
 
-      if (event.key !== "Escape") {
-        return;
-      }
-
-      if (!menu || !links) {
-        return;
-      }
-
-      links.classList.remove("active");
-
-      menu.setAttribute(
-        "aria-expanded",
-        "false"
-      );
-
-      menu.setAttribute(
-        "aria-label",
-        "Open menu"
-      );
-
-      menu.textContent = "☰";
-
+    if (event.key !== "Escape") {
+      return;
     }
-  );
+
+    if (!menu || !links) {
+      return;
+    }
+
+    links.classList.remove("active");
+
+    menu.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+    menu.setAttribute(
+      "aria-label",
+      "Open menu"
+    );
+
+    menu.textContent = "☰";
+
+  });
 
 
   /* ===================================================
@@ -240,21 +211,16 @@ document.addEventListener("DOMContentLoaded", () => {
     .querySelectorAll("img")
     .forEach((image) => {
 
-      image.addEventListener(
-        "error",
-        () => {
+      image.addEventListener("error", () => {
 
-          image.classList.add(
-            "image-error"
-          );
+        image.classList.add("image-error");
 
-          console.warn(
-            "Image could not be loaded:",
-            image.src
-          );
+        console.warn(
+          "Image could not be loaded:",
+          image.src
+        );
 
-        }
-      );
+      });
 
     });
 
