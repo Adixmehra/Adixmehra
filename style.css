@@ -2,6 +2,7 @@
    ADIX MEHRA PORTFOLIO
    Modern Dark Portfolio
    Responsive + Animated
+   FIXED IMAGE / CARD SYSTEM
 ===================================================== */
 
 
@@ -104,17 +105,6 @@ button {
   -webkit-backdrop-filter: blur(18px);
 }
 
-.nav-inner {
-  width: min(1120px, 100%);
-  margin-inline: auto;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 20px;
-}
-
 .logo {
   font-family: "Space Grotesk", sans-serif;
 
@@ -130,15 +120,14 @@ button {
 }
 
 
-/* NAV LINKS */
+/* =====================================================
+   NAV LINKS
+===================================================== */
 
 .nav-links {
   display: flex;
   align-items: center;
-
   gap: 25px;
-
-  list-style: none;
 }
 
 .nav-links a {
@@ -149,8 +138,7 @@ button {
   font-size: 14px;
   font-weight: 500;
 
-  transition:
-    color 0.25s ease;
+  transition: color 0.25s ease;
 }
 
 .nav-links a:hover {
@@ -173,8 +161,7 @@ button {
   transform: scaleX(0);
   transform-origin: left;
 
-  transition:
-    transform 0.25s ease;
+  transition: transform 0.25s ease;
 }
 
 .nav-links a:hover::after {
@@ -182,7 +169,9 @@ button {
 }
 
 
-/* MENU BUTTON */
+/* =====================================================
+   MENU BUTTON
+===================================================== */
 
 .menu {
   display: none;
@@ -226,9 +215,6 @@ button {
   overflow: hidden;
 }
 
-
-/* HERO GLOW */
-
 .hero::before {
   content: "";
 
@@ -242,8 +228,7 @@ button {
 
   border-radius: 50%;
 
-  background:
-    rgba(144, 123, 255, 0.16);
+  background: rgba(144, 123, 255, 0.16);
 
   filter: blur(90px);
 
@@ -251,9 +236,6 @@ button {
 
   animation: glow 6s ease-in-out infinite;
 }
-
-
-/* HERO COPY */
 
 .hero-copy {
   position: relative;
@@ -269,9 +251,7 @@ button {
 
   padding: 8px 14px;
 
-  border:
-    1px solid
-    rgba(144, 123, 255, 0.45);
+  border: 1px solid rgba(144, 123, 255, 0.45);
 
   border-radius: 50px;
 
@@ -281,8 +261,7 @@ button {
 
   letter-spacing: 2px;
 
-  animation:
-    fadeUp 0.7s ease both;
+  animation: fadeUp 0.7s ease both;
 }
 
 .hero h1 {
@@ -296,8 +275,7 @@ button {
 
   letter-spacing: -3px;
 
-  animation:
-    fadeUp 0.7s 0.12s ease both;
+  animation: fadeUp 0.7s 0.12s ease both;
 }
 
 .hero h1 span {
@@ -313,8 +291,7 @@ button {
 
   font-size: 17px;
 
-  animation:
-    fadeUp 0.7s 0.22s ease both;
+  animation: fadeUp 0.7s 0.22s ease both;
 }
 
 .hero p strong {
@@ -334,8 +311,7 @@ button {
 
   margin-top: 30px;
 
-  animation:
-    fadeUp 0.7s 0.32s ease both;
+  animation: fadeUp 0.7s 0.32s ease both;
 }
 
 .btn {
@@ -380,12 +356,9 @@ button {
 }
 
 .secondary {
-  border:
-    1px solid
-    rgba(255, 255, 255, 0.13);
+  border: 1px solid rgba(255, 255, 255, 0.13);
 
-  background:
-    rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.04);
 
   color: #ffffff;
 }
@@ -414,13 +387,11 @@ button {
 
   border-radius: 50%;
 
-  background:
-    rgba(144, 123, 255, 0.13);
+  background: rgba(144, 123, 255, 0.13);
 
   filter: blur(65px);
 
-  animation:
-    glow 5s ease-in-out infinite;
+  animation: glow 5s ease-in-out infinite;
 }
 
 .avatar-card {
@@ -437,8 +408,7 @@ button {
     0 30px 80px
     rgba(0, 0, 0, 0.45);
 
-  animation:
-    float 5s ease-in-out infinite;
+  animation: float 5s ease-in-out infinite;
 }
 
 .avatar-card img {
@@ -446,26 +416,6 @@ button {
   height: 440px;
 
   object-fit: cover;
-}
-
-.avatar-info {
-  display: flex;
-
-  flex-direction: column;
-
-  padding: 18px 20px;
-}
-
-.avatar-info strong {
-  font-size: 17px;
-}
-
-.avatar-info small {
-  margin-top: 3px;
-
-  color: #9999a7;
-
-  font-size: 12px;
 }
 
 .floating-card {
@@ -492,16 +442,7 @@ button {
     0 20px 45px
     rgba(0, 0, 0, 0.35);
 
-  animation:
-    float 4s 0.5s ease-in-out infinite;
-}
-
-.floating-card strong {
-  color: #907bff;
-
-  font-family: monospace;
-
-  font-size: 16px;
+  animation: float 4s 0.5s ease-in-out infinite;
 }
 
 .floating-card small {
@@ -588,7 +529,9 @@ button {
 }
 
 
-/* STATS */
+/* =====================================================
+   STATS
+===================================================== */
 
 .stats {
   display: grid;
@@ -723,6 +666,8 @@ button {
     repeat(2, minmax(0, 1fr));
 
   gap: 22px;
+
+  align-items: start;
 }
 
 .project {
@@ -752,43 +697,53 @@ button {
 }
 
 
-/* PROJECT IMAGE */
+/* =====================================================
+   PROJECT IMAGES — IMPORTANT FIX
+===================================================== */
+
+/*
+   DO NOT force 16:10 / 16:9 here.
+
+   Every image keeps its own natural aspect ratio.
+*/
 
 .project-photo {
+  display: block;
+
   width: 100%;
+  height: auto;
 
-  aspect-ratio: 16 / 10;
+  max-width: 100%;
 
-  overflow: hidden;
-}
+  object-fit: contain;
 
-.project-photo img {
-  width: 100%;
-  height: 100%;
+  object-position: center;
 
-  object-fit: cover;
+  background: #0b0b11;
 
   transition:
     transform 0.55s ease,
     filter 0.55s ease;
 }
 
-.project:hover .project-photo img {
-  transform: scale(1.05);
+.project:hover .project-photo {
+  transform: scale(1.02);
 
   filter:
-    saturate(1.1)
-    brightness(1.04);
+    saturate(1.06)
+    brightness(1.03);
 }
 
 
-/* PROJECT CONTENT */
+/* =====================================================
+   PROJECT TEXT
+===================================================== */
 
-.project-content {
-  padding: 25px;
-}
+.project > small {
+  display: block;
 
-.project-content small {
+  margin: 22px 25px 0;
+
   color: #907bff;
 
   font-size: 10px;
@@ -798,18 +753,258 @@ button {
   letter-spacing: 2px;
 }
 
-.project-content h3 {
-  margin-top: 8px;
+.project > h3 {
+  margin:
+    8px 25px 0;
 
   font-family: "Space Grotesk", sans-serif;
 
   font-size: 25px;
+
+  line-height: 1.15;
 }
 
-.project-content p {
-  margin-top: 9px;
+.project > p {
+  margin:
+    9px 25px 25px;
 
   color: #9696a3;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   PROJECT DETAIL PAGE
+===================================================== */
+
+.projects-page {
+  min-height: 100vh;
+
+  padding-top: 90px;
+  padding-bottom: 100px;
+}
+
+.projects-heading {
+  text-align: center;
+
+  max-width: 750px;
+
+  margin:
+    0 auto 60px;
+}
+
+.projects-heading small {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color: #907bff;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.projects-heading h1 {
+  margin: 0;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size:
+    clamp(45px, 8vw, 80px);
+
+  line-height: 1;
+
+  letter-spacing: -3px;
+}
+
+.projects-heading h1 span {
+  color: #907bff;
+}
+
+.projects-heading p {
+  margin: 20px auto 0;
+
+  max-width: 620px;
+
+  color: #a9a9b3;
+
+  line-height: 1.7;
+}
+
+.back-button {
+  display: inline-flex;
+
+  margin-bottom: 45px;
+
+  padding: 12px 18px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.10);
+
+  border-radius: 12px;
+
+  background:
+    rgba(255, 255, 255, 0.04);
+
+  color: #fff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  transition: 0.25s ease;
+}
+
+.back-button:hover {
+  border-color:
+    rgba(144, 123, 255, 0.6);
+
+  background:
+    rgba(144, 123, 255, 0.08);
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* =====================================================
+   PROJECT DETAIL CARD
+===================================================== */
+
+.project-detail {
+  overflow: hidden;
+
+  margin-bottom: 55px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.09);
+
+  border-radius: 28px;
+
+  background:
+    rgba(255, 255, 255, 0.025);
+
+  box-shadow:
+    0 25px 70px
+    rgba(0, 0, 0, 0.25);
+}
+
+
+/*
+   IMPORTANT:
+   Natural image ratio is preserved.
+*/
+
+.project-detail-image {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  max-width: 100%;
+
+  object-fit: contain;
+
+  object-position: center;
+
+  background: #0b0b11;
+}
+
+
+/* =====================================================
+   PROJECT DETAIL CONTENT
+===================================================== */
+
+.project-detail-content {
+  padding: 30px;
+}
+
+.project-detail-content small {
+  color: #907bff;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.project-detail-content h2 {
+  margin: 12px 0 0;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size:
+    clamp(30px, 5vw, 55px);
+
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+}
+
+.project-detail-content p {
+  max-width: 750px;
+
+  margin-top: 18px;
+
+  color: #a9a9b3;
+
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   PROJECT INFO
+===================================================== */
+
+.project-info {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 14px;
+
+  margin-top: 28px;
+}
+
+.project-info-box {
+  padding: 18px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius: 15px;
+
+  background:
+    rgba(255, 255, 255, 0.025);
+}
+
+.project-info-box small {
+  display: block;
+
+  color: #777783;
+
+  font-size: 10px;
+
+  letter-spacing: 1.5px;
+}
+
+.project-info-box strong {
+  display: block;
+
+  margin-top: 7px;
+
+  color: #fff;
 
   font-size: 14px;
 }
@@ -832,7 +1027,7 @@ button {
   border-radius: 24px;
 }
 
-.service-item {
+.services > div {
   min-height: 170px;
 
   display: flex;
@@ -850,12 +1045,12 @@ button {
     background 0.3s ease;
 }
 
-.service-item:hover {
+.services > div:hover {
   background:
     rgba(144, 123, 255, 0.06);
 }
 
-.service-item > span {
+.services > div > span {
   margin-bottom: 18px;
 
   color: #907bff;
@@ -865,13 +1060,13 @@ button {
   letter-spacing: 2px;
 }
 
-.service-item strong {
+.services > div strong {
   font-family: "Space Grotesk", sans-serif;
 
   font-size: 22px;
 }
 
-.service-item small {
+.services > div small {
   margin-top: 5px;
 
   color: #8d8d99;
@@ -937,7 +1132,8 @@ button {
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: clamp(38px, 6vw, 65px);
+  font-size:
+    clamp(38px, 6vw, 65px);
 
   line-height: 1.05;
 
@@ -991,7 +1187,7 @@ footer {
   font-size: 13px;
 }
 
-.footer-inner {
+footer > .container {
   display: flex;
 
   align-items: center;
@@ -1001,20 +1197,20 @@ footer {
   gap: 20px;
 }
 
-.footer-inner a {
+footer a {
   color: #9696a3;
 
   transition:
     color 0.25s ease;
 }
 
-.footer-inner a:hover {
+footer a:hover {
   color: #907bff;
 }
 
 
 /* =====================================================
-   REVEAL ANIMATION
+   REVEAL
 ===================================================== */
 
 .reveal {
@@ -1037,7 +1233,7 @@ footer {
 
 
 /* =====================================================
-   GENERAL ANIMATIONS
+   ANIMATIONS
 ===================================================== */
 
 @keyframes fadeUp {
@@ -1145,10 +1341,6 @@ footer {
   .nav {
     padding:
       14px;
-  }
-
-  .nav-inner {
-    width: 100%;
   }
 
   .menu {
@@ -1294,137 +1486,13 @@ footer {
     grid-template-columns: 1fr;
   }
 
-}
-
-
-/* =====================================================
-   SMALL PHONES
-===================================================== */
-
-@media (max-width: 520px) {
-
-  .logo {
-    font-size: 19px;
-
-    letter-spacing:
-      0.5px;
-  }
-
-  .hero {
-    padding-top: 55px;
-  }
-
-  .hero h1 {
-    font-size: 43px;
-
-    line-height: 1.04;
-  }
-
-  .hero p {
-    font-size: 15px;
-  }
-
-  .buttons {
-    flex-direction: column;
-
-    width: 100%;
-  }
-
-  .btn {
-    width: 100%;
-  }
-
-  .hero-visual {
-    min-height: 360px;
-  }
-
-  .avatar-card {
-    width: 100%;
-
-    max-width: 340px;
-  }
-
-  .avatar-card img {
-    height: 350px;
-  }
-
-  .floating-card {
-    right: -3px;
-
-    padding: 12px 14px;
-  }
-
-  .section-title h2 {
-    font-size: 36px;
-
-    letter-spacing:
-      -1.5px;
-  }
-
-  .about-grid {
-    gap: 25px;
-  }
-
-  .stats {
-    grid-template-columns: 1fr;
-  }
-
-  .stat {
-    min-height: 110px;
-  }
-
-  .skills {
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    min-height: 190px;
-
-    padding: 24px;
-  }
-
-  .project-content {
-    padding: 21px;
-  }
-
-  .contact {
+  .projects-page {
     padding:
-      55px 20px;
+      65px 0 80px;
   }
 
-  .contact h2 {
-    font-size: 38px;
+  .projects-heading {
+    margin-bottom: 45px;
   }
 
-  .footer-inner {
-    flex-direction: column;
-
-    text-align: center;
-  }
-
-}
-
-
-/* =====================================================
-   REDUCED MOTION
-===================================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-
-    transition: none !important;
-
-    scroll-behavior: auto !important;
-  }
-
-  .reveal {
-    opacity: 1;
-
-    transform: none;
-  }
-
-}
+  .projects-heading h1
