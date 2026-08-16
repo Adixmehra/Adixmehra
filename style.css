@@ -130,7 +130,9 @@ button {
 }
 
 
-/* NAV LINKS */
+/* =====================================================
+   NAV LINKS
+===================================================== */
 
 .nav-links {
   display: flex;
@@ -182,7 +184,9 @@ button {
 }
 
 
-/* MENU BUTTON */
+/* =====================================================
+   MENU BUTTON
+===================================================== */
 
 .menu {
   display: none;
@@ -227,7 +231,9 @@ button {
 }
 
 
-/* HERO GLOW */
+/* =====================================================
+   HERO GLOW
+===================================================== */
 
 .hero::before {
   content: "";
@@ -249,11 +255,14 @@ button {
 
   pointer-events: none;
 
-  animation: glow 6s ease-in-out infinite;
+  animation:
+    glow 6s ease-in-out infinite;
 }
 
 
-/* HERO COPY */
+/* =====================================================
+   HERO COPY
+===================================================== */
 
 .hero-copy {
   position: relative;
@@ -588,7 +597,9 @@ button {
 }
 
 
-/* STATS */
+/* =====================================================
+   STATS
+===================================================== */
 
 .stats {
   display: grid;
@@ -754,25 +765,42 @@ button {
 
 /* =====================================================
    PROJECT IMAGE
-   IMPORTANT:
    ORIGINAL IMAGE ASPECT RATIO
 ===================================================== */
+
+/*
+   IMPORTANT:
+
+   Do NOT set:
+   aspect-ratio: 16 / 10;
+   aspect-ratio: 16 / 9;
+   height: 400px;
+   height: 500px;
+
+   Every image keeps its own natural dimensions.
+*/
 
 .project-photo {
   display: block;
 
   width: 100%;
-  height: auto;
+
+  height: auto !important;
 
   max-width: 100%;
 
   /*
-    Do NOT force 16:10 / 16:9 / 4:3.
-    Each image keeps its own natural ratio.
+     The browser automatically calculates
+     the height from the image's natural ratio.
   */
-  aspect-ratio: auto;
+  aspect-ratio: auto !important;
 
-  object-fit: contain;
+  /*
+     No cropping.
+     No forced box.
+     No stretching.
+  */
+  object-fit: initial;
 
   object-position: center;
 
@@ -782,7 +810,9 @@ button {
 }
 
 
-/* Hover effect directly on the IMG */
+/* =====================================================
+   PROJECT IMAGE HOVER
+===================================================== */
 
 .project:hover .project-photo {
   transform: scale(1.02);
@@ -793,10 +823,22 @@ button {
 }
 
 
-/* Prevent image overflow */
+/* =====================================================
+   PROJECT IMAGE SAFETY
+===================================================== */
 
 .project img {
+  display: block;
+
+  width: 100%;
+
+  height: auto !important;
+
   max-width: 100%;
+
+  aspect-ratio: auto !important;
+
+  object-fit: initial;
 }
 
 
@@ -836,16 +878,15 @@ button {
 
 
 /*
-   Your current HTML places the text directly
-   inside .project, not inside .project-content.
-   These rules make that layout look correct
-   without requiring HTML changes.
+   Current HTML puts the project text
+   directly inside .project.
 */
 
 .project > small {
   display: block;
 
   margin-top: 25px;
+
   margin-left: 30px;
   margin-right: 30px;
 
@@ -860,6 +901,7 @@ button {
 
 .project > h3 {
   margin-top: 8px;
+
   margin-left: 30px;
   margin-right: 30px;
 
@@ -872,13 +914,17 @@ button {
 
 .project > p {
   margin-top: 9px;
+
   margin-left: 30px;
   margin-right: 30px;
+
   margin-bottom: 30px;
 
   color: #9696a3;
 
   font-size: 14px;
+
+  line-height: 1.7;
 }
 
 
@@ -1361,16 +1407,35 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  /*
-     Keep every project image at its
-     natural height on mobile too.
-  */
+
+  /* =================================================
+     PROJECT IMAGES — MOBILE ORIGINAL RATIO
+  ================================================= */
 
   .project-photo {
+    display: block;
+
     width: 100%;
-    height: auto;
-    aspect-ratio: auto;
-    object-fit: contain;
+
+    height: auto !important;
+
+    max-width: 100%;
+
+    aspect-ratio: auto !important;
+
+    object-fit: initial;
+  }
+
+  .project img {
+    width: 100%;
+
+    height: auto !important;
+
+    max-width: 100%;
+
+    aspect-ratio: auto !important;
+
+    object-fit: initial;
   }
 
 }
@@ -1430,98 +1495,4 @@ footer {
   .floating-card {
     right: -3px;
 
-    padding: 12px 14px;
-  }
-
-  .section-title h2 {
-    font-size: 36px;
-
-    letter-spacing:
-      -1.5px;
-  }
-
-  .about-grid {
-    gap: 25px;
-  }
-
-  .stats {
-    grid-template-columns: 1fr;
-  }
-
-  .stat {
-    min-height: 110px;
-  }
-
-  .skills {
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    min-height: 190px;
-
-    padding: 24px;
-  }
-
-  .project-content {
-    padding: 21px;
-  }
-
-  .project > small {
-    margin-left: 21px;
-    margin-right: 21px;
-  }
-
-  .project > h3 {
-    margin-left: 21px;
-    margin-right: 21px;
-
-    font-size: 23px;
-  }
-
-  .project > p {
-    margin-left: 21px;
-    margin-right: 21px;
-    margin-bottom: 24px;
-  }
-
-  .contact {
-    padding:
-      55px 20px;
-  }
-
-  .contact h2 {
-    font-size: 38px;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-
-    text-align: center;
-  }
-
-}
-
-
-/* =====================================================
-   REDUCED MOTION
-===================================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-
-    transition: none !important;
-
-    scroll-behavior: auto;
-  }
-
-  .reveal {
-    opacity: 1;
-
-    transform: none;
-  }
-
-}
+    padding: 12px 1
