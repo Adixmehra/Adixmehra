@@ -1033,3 +1033,495 @@ button {
   display: block;
 
   margin-top: 22px;
+
+  color: #777783;
+
+  font-size: 12px;
+
+  font-style: normal;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+  padding: 35px 20px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+
+  color: #6f6f7a;
+
+  font-size: 13px;
+}
+
+.footer-inner {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.footer-inner a {
+  color: #9696a3;
+
+  transition:
+    color 0.25s ease;
+}
+
+.footer-inner a:hover {
+  color: #907bff;
+}
+
+
+/* =====================================================
+   REVEAL ANIMATION
+===================================================== */
+
+.reveal {
+  opacity: 0;
+
+  transform:
+    translateY(25px);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+}
+
+
+/* =====================================================
+   GENERAL ANIMATIONS
+===================================================== */
+
+@keyframes fadeUp {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(-10px);
+  }
+
+}
+
+@keyframes glow {
+
+  0%,
+  100% {
+    transform:
+      scale(1);
+
+    opacity:
+      0.7;
+  }
+
+  50% {
+    transform:
+      scale(1.06);
+
+    opacity:
+      1;
+  }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .hero {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+    padding-top: 70px;
+  }
+
+  .hero-copy {
+    max-width: 760px;
+  }
+
+  .hero-visual {
+    min-height: 430px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .skills {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE NAVIGATION
+===================================================== */
+
+@media (max-width: 800px) {
+
+  .container {
+    width:
+      calc(100% - 28px);
+  }
+
+  .nav {
+    padding:
+      14px;
+  }
+
+  .nav-inner {
+    width: 100%;
+  }
+
+  .menu {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links {
+    position: absolute;
+
+    top: calc(100% + 8px);
+
+    left: 14px;
+    right: 14px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 0;
+
+    padding: 8px;
+
+    border:
+      1px solid
+      rgba(255, 255, 255, 0.1);
+
+    border-radius: 18px;
+
+    background:
+      rgba(9, 9, 14, 0.97);
+
+    box-shadow:
+      0 20px 50px
+      rgba(0, 0, 0, 0.45);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+      translateY(-10px);
+
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      visibility 0.25s ease;
+  }
+
+  .nav-links.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+      translateY(0);
+  }
+
+  .nav-links a {
+    display: block;
+
+    padding: 14px;
+
+    border-radius: 10px;
+  }
+
+  .nav-links a:hover {
+    background:
+      rgba(144, 123, 255, 0.08);
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .hero {
+    min-height: auto;
+
+    padding-top: 70px;
+    padding-bottom: 75px;
+  }
+
+  .hero h1 {
+    font-size:
+      clamp(42px, 12vw, 62px);
+
+    letter-spacing:
+      -2px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero-visual {
+    min-height: 400px;
+  }
+
+  .avatar-card {
+    width:
+      min(360px, 90%);
+  }
+
+  .avatar-card img {
+    height: 390px;
+  }
+
+  .floating-card {
+    right: 0;
+
+    bottom: 20px;
+  }
+
+  .section {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  .section-title {
+    margin-bottom: 32px;
+  }
+
+  .section-title h2 {
+    font-size: 42px;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .project:nth-child(3) {
+    grid-column: auto;
+  }
+
+  .services {
+    grid-template-columns: 1fr;
+  }
+
+  /*
+     Keep every project image at its
+     natural height on mobile too.
+  */
+
+  .project-photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media (max-width: 520px) {
+
+  .logo {
+    font-size: 19px;
+
+    letter-spacing:
+      0.5px;
+  }
+
+  .hero {
+    padding-top: 55px;
+  }
+
+  .hero h1 {
+    font-size: 43px;
+
+    line-height: 1.04;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .buttons {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .hero-visual {
+    min-height: 360px;
+  }
+
+  .avatar-card {
+    width: 100%;
+
+    max-width: 340px;
+  }
+
+  .avatar-card img {
+    height: 350px;
+  }
+
+  .floating-card {
+    right: -3px;
+
+    padding: 12px 14px;
+  }
+
+  .section-title h2 {
+    font-size: 36px;
+
+    letter-spacing:
+      -1.5px;
+  }
+
+  .about-grid {
+    gap: 25px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stat {
+    min-height: 110px;
+  }
+
+  .skills {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: 190px;
+
+    padding: 24px;
+  }
+
+  .project-content {
+    padding: 21px;
+  }
+
+  .project > small {
+    margin-left: 21px;
+    margin-right: 21px;
+  }
+
+  .project > h3 {
+    margin-left: 21px;
+    margin-right: 21px;
+
+    font-size: 23px;
+  }
+
+  .project > p {
+    margin-left: 21px;
+    margin-right: 21px;
+    margin-bottom: 24px;
+  }
+
+  .contact {
+    padding:
+      55px 20px;
+  }
+
+  .contact h2 {
+    font-size: 38px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+
+    transition: none !important;
+
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+
+    transform: none;
+  }
+
+}
