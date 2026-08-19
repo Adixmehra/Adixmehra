@@ -125,4 +125,4 @@
     // Render a single static frame instead of looping
     renderer.render(scene, camera);
   }
-})();
+})(); 
