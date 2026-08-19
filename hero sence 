@@ -1,0 +1,128 @@
+/* =====================================================
+   ADIX MEHRA PORTFOLIO
+   Hero 3D Glowing Wireframe Scene (Three.js)
+   ===================================================== */
+
+(() => {
+  const canvas = document.getElementById("hero-scene");
+  if (!canvas || typeof THREE === "undefined") return;
+
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  let width = canvas.clientWidth || canvas.parentElement.clientWidth;
+  let height = canvas.clientHeight || canvas.parentElement.clientHeight;
+
+  const renderer = new THREE.WebGLRenderer({
+    canvas,
+    alpha: true,
+    antialias: true,
+  });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(width, height, false);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
+  camera.position.set(0, 0, 7);
+
+  // Amber / gold glow palette to match the signature look
+  const amber = 0xff8a3d;
+  const amberSoft = 0xffb27a;
+
+  // Core wireframe object — an icosahedron reads as a
+  // faceted "structure" (echoes an architectural form)
+  const geometry = new THREE.IcosahedronGeometry(2.1, 1);
+  const wireMaterial = new THREE.MeshBasicMaterial({
+    color: amber,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.75,
+  });
+  const core = new THREE.Mesh(geometry, wireMaterial);
+  scene.add(core);
+
+  // Soft inner glow shell (additive blending fakes bloom)
+  const glowGeometry = new THREE.IcosahedronGeometry(2.05, 1);
+  const glowMaterial = new THREE.MeshBasicMaterial({
+    color: amberSoft,
+    transparent: true,
+    opacity: 0.06,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+  });
+  const glowShell = new THREE.Mesh(glowGeometry, glowMaterial);
+  scene.add(glowShell);
+
+  // Ambient floating particles for depth
+  const particleCount = 60;
+  const particleGeometry = new THREE.BufferGeometry();
+  const positions = new Float32Array(particleCount * 3);
+  for (let i = 0; i < particleCount; i++) {
+    positions[i * 3] = (Math.random() - 0.5) * 9;
+    positions[i * 3 + 1] = (Math.random() - 0.5) * 9;
+    positions[i * 3 + 2] = (Math.random() - 0.5) * 6 - 1;
+  }
+  particleGeometry.setAttribute(
+    "position",
+    new THREE.BufferAttribute(positions, 3)
+  );
+  const particleMaterial = new THREE.PointsMaterial({
+    color: amberSoft,
+    size: 0.035,
+    transparent: true,
+    opacity: 0.55,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+  });
+  const particles = new THREE.Points(particleGeometry, particleMaterial);
+  scene.add(particles);
+
+  function resize() {
+    width = canvas.clientWidth || canvas.parentElement.clientWidth;
+    height = canvas.clientHeight || canvas.parentElement.clientHeight;
+    if (!width || !height) return;
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+    renderer.setSize(width, height, false);
+  }
+  window.addEventListener("resize", resize);
+  resize();
+
+  let frameId = null;
+  let t = 0;
+
+  function animate() {
+    frameId = requestAnimationFrame(animate);
+    t += 0.0035;
+
+    core.rotation.x = t * 0.7;
+    core.rotation.y = t;
+    glowShell.rotation.x = core.rotation.x;
+    glowShell.rotation.y = core.rotation.y;
+    particles.rotation.y = t * 0.15;
+
+    renderer.render(scene, camera);
+  }
+
+  // Pause rendering when off-screen to save battery/CPU
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if (!frameId) animate();
+        } else if (frameId) {
+          cancelAnimationFrame(frameId);
+          frameId = null;
+        }
+      });
+    },
+    { threshold: 0.05 }
+  );
+  io.observe(canvas);
+
+  if (prefersReducedMotion) {
+    // Render a single static frame instead of looping
+    renderer.render(scene, camera);
+  }
+})();
